@@ -32,13 +32,6 @@ col.same-height {
   padding-bottom: 30%;
 }
 
-.square3 {
- 	width: 30%;
-	min-width: 250px;
-}
-
-.square3:after {
-  content: "";
-  display: block;
-  padding-bottom: 20%;
+.spacer {
+	min-width: 25px;
 }
