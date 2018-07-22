@@ -1,6 +1,44 @@
 p.subtitle {
-	font-size: 15px
+	font-size: 15px;
 }
-.flow-text {
-	
+row.same-height {
+	display: flex;
+
+}
+col.same-height {
+  flex: 1; /* additionally, equal width */
+  
+  padding: 1em;
+  border: solid;
+}
+
+.flexcontainer {
+	padding-left: 20%;
+	padding-right: 20%;
+	display: flex; /* or inline-flex */
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.square4 {
+ 	width: 41.6%;
+	min-width: 250px;
+}
+
+.square4:after {
+  content: "";
+  display: block;
+  padding-bottom: 30%;
+}
+
+.square3 {
+ 	width: 30%;
+	min-width: 250px;
+}
+
+.square3:after {
+  content: "";
+  display: block;
+  padding-bottom: 20%;
 }
