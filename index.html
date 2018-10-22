@@ -1,71 +1,259 @@
 <!DOCTYPE html>
-<html>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+<!-- saved from url=(0034)http://iamdustan.com/smoothscroll/ -->
+<html lang="en" class="gr__iamdustan_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Paul Ngo</title>
+  <link rel="stylesheet" href="./Smooth Scroll behavior polyfill_files/normalize.min.css">
+  <link href="./Smooth Scroll behavior polyfill_files/css" rel="stylesheet" type="text/css">
+  <!-- rAF polyfill -->
+  <script src="polyfill.js"></script>
+  <!-- smooth scroll behavior polyfill -->
+  <script src="./Smooth Scroll behavior polyfill_files/smoothscroll.js.download"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.jpg">
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- 4.1 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
-<head>
-    <title>Paul Ngo</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
-<body>
-	<div class="navbar-fixed">
-		<nav>
-			<div class="nav-wrapper blue lighten-3">
-				<a href="#" class="brand-logo black-text" style="min-width: 150px">Paul Ngo</a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a class="waves-effect waves-light btn blue" href="#about">About</a></li>
-						<li><a class="waves-effect waves-light btn blue">Projects</a></li>
-						<li><a class="waves-effect waves-light btn blue">Contact</a></li>
-					</ul>
+
+<body data-gr-c-s-loaded="true">
+	<nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #e3f2fd;" id="#navbar">
+		<a class="navbar-brand" href="#">Paul Ngo</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="nav mr-auto nav-pills">
+				<li class="nav-item active">
+					<div class="actions">
+						<a class="nav-link js-scroll-to-home" href="#home">Home<span class="sr-only">(current)</span></a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<div class="actions">
+						<a class="nav-link js-scroll-to-background" href="#background">Background</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<div class="actions">
+						<a class="nav-link js-scroll-to-projects" href="#projects">Projects</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<div class="actions">
+						<a class="nav-link js-scroll-to-hobbies" href="#hobbies">Hobbies</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<div class="actions">
+						<a class="nav-link js-scroll-to-contact" href="#contact">Contact</a>
+					</div>
+				</li>
+			</ul>
+			<!-- <form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search coming soon!" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form> -->
+		</div>
+	</nav>
+	
+  <br>
+	<br>
+
+	<div data-spy="scroll" data-target="#navbar" data-offset="0">
+	
+	<div class="container home" id="#home">
+		<div class="row justify-content-center">
+		<div class="col-2"></div>
+		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(181, 135, 211)">
+			<div class="row justify-content-center">
+			<div class="media col-12 justify-content-center" style="margin-left: -200px">
+				<div class="col-7">
+				<img src="assets/images/my face.jpg" class="rounded border border-dark align-self-center img-fluid" alt="Paul Ngo">
+				</div>
+				<div class="media-body ml-3">
+				<h1 class="mb-2">Hello World.</h1>
+				<p class="mb-2">I'm Paul Ngo, a UC Berkeley sophomore double majoring in Electrical Engineering/Computer Science and Bioengineering.</p>
+				<p class="mb-2">Although this website is under maintenance, feel free take a look around!</p>
+				</div>
 			</div>
-		</nav>
+			</div>
+		</div>
 	</div>
-	<div class="divider"></div>
-  	<div class="section">
-		<div class="flexcontainer">
-				<div class="teal lighten-3 square4">
-					<span class="flow-text center">
-						<h3>Hello World.</h3>
-						<p>My name is Paul.</p>
-					</span>
+	</div>
+  
+	<br>
+  <br>
+  
+	<div class="container background" id="#background">
+    <div class="row justify-content-center">
+		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(135, 149, 211)">
+			<div class="row justify-content-center">
+			<div class="media col-12 justify-content-center" style="margin-right: -200px">
+				<div class="media-body mr-3">
+				<h1 class="mb-2">Background</h1>
+				<p class="mb-2">I was born in South California, and grew up in Davis, California, from elementary school to high school. </p>
+				<p class="mb-2">In Davis, I developed my passions for engineering, science, and technology.</p>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openbackground" aria-expanded="false" aria-controls="collapseExample">
+					More!
+					</button>
+				</p>
 				</div>
-				<div class="square4 right">
-					<br>
-					<p class="subtitle grey-text flow-text">I want to contribute to technologies and procedures in fields that combine medicine and engineering to positively affect the quality of life.</p>
+				<div class="col-7">
+				<img src="assets/images/campanile.jpg" class="rounded border border-dark align-self-center img-fluid" alt="campanile">
 				</div>
+			</div>
+			</div>
+		</div>
+		<div class="col-2"></div>
+    </div>
+	</div>
+	<br>
+	<div class = "row justify-content-center">
+		<div class = "col-6">
+		<div class="collapse openbackground" id="openbackground">
+			<div class="card card-body">
+				In middle school and high school, I participated in several volunteer groups and associations, including NJHS (National Junior Honor Society) and 
+				CSF (California Scholarship Federation). In particular, I gained a lot out of my time as a member of Music From Home, a student group which organized 
+				musical recitals for an elderly home in Davis. I was a part of the photography and media team during my time there.
+			</div>
+			<div class="card card-body">
+				In 2013, I joined my local FRC (First Robotics Competition) team, Team 1678: Citrus Circuits. In my years on the team, I grew to love this 
+				engineering family which I had found there. During my four years there, I gained experience with machine shop work and safety, electrical engineering 
+				skills, and began self-learning computer coding languages. Team 1678 won the FRC world championships in 2015. I became the electrical subteam lead 
+				in 2016, and enjoyed passing on the passion of teamwork and creativity to fellow members of the team.
+			</div>
+		</div>
+		</div>
+	</div>  
+
+	<br>
+  <br>
+  
+	<div class="container projects" id="#projects">
+		<div class="row justify-content-center">
+		<div class="col-2"></div>
+		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(135, 211, 167)">
+			<div class="row justify-content-center">
+			<div class="media col-12 justify-content-center" style="margin-left: -200px">
+				<div class="col-7">
+					<img src="assets/images/code.jpg" class="rounded border border-light align-self-center img-fluid" alt="code">
+				</div>
+				<div class="media-body ml-3">
+				<h1 class="mb-2">Projects</h1>
+				<p class="mb-2">In and outside of class, I enjoy putting together programs, games, and small crafts!</p>
+				<p class="mb-2">I firmly believe that creativity is like powering a light- for, the more you power it, the more you can see!</p>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openprojects" aria-expanded="false" aria-controls="collapseExample">
+					Powering my light
+					</button>
+				</p>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+  	</div>
+  	<br>
+	<div class = "row justify-content-center">
+		<div class = "col-6">
+		<div class="collapse" id="openprojects">
+			<div class="card card-body">
+				<span class="left"><h3>Gitlet</h3></span><span class="right">Right aligned</span>​
+				<h3>AvalonAI</h3><span class="right">Right aligned</span>​
+				<h3>Time</h3><span class="right">Right aligned</span>​
+				<h3>Dual Extrustion for Bioprinting</h3><span class="right">Right aligned</span>​
+			</div>
+		</div>
+		</div>
+	</div>  
+  
+	<br>
+  	<br>
+  
+	<div class="container hobbies" id="#hobbies">
+		<div class="row justify-content-center">
+		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(95, 206, 206)">
+			<div class="row justify-content-center">
+			<div class="media col-12 justify-content-center" style="margin-right: -200px">
+				<div class="media-body ml-3">
+				<h1 class="mb-2">Hobbies</h1>
+				<p class="mb-2">My free time is always a time to learn, and to have fun while doing so!</p>
+				<p class="mb-2">Whether it be in-person board games or stratetic games online, I'm always ready to have some fun with tactics!</p>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openhobbies" aria-expanded="false" aria-controls="collapseExample">
+					What tactics?
+					</button>
+				</p>
+				</div>
+				<div class="col-7">
+				<img src="assets/images/chess.jpg" class="rounded border border-success align-self-center img-fluid" alt="chess">
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="col-2"></div>
 		</div>
 	</div>
-	<div class="divider"></div>
-	<div class="section" id="about">
-		<div class="container">
-		<div class="row">
-			<div class="center"><span class="flow-text">About</span></div>
+	<br>
+	<div class = "row justify-content-center">
+		<div class = "col-6">
+		<div class="collapse" id="openhobbies">
+			<div class="card card-body">
+			Chess
+			Avalon
+			Rainbow Six: Siege
+			</div>
 		</div>
 		</div>
 	</div>
-	<div class="divider"></div>
-	<div class="section">
-		<div class="container">
-		<div class="row">
-			<div class="center"><span class="flow-text">Projects</span></div>
-		</div>
-		</div>
-	</div>
-	<div class="divider"></div>
-	<div class="section">
-		<div class="container">
-		<div class="row">
-			<div class="center"><span class="flow-text">Academics and Honors</span></div>
-		</div>
-		</div>
-	</div>
-	<div class="divider"></div>
-	<div class="section">
-		<div class="container">
-		<div class="row">
-			<div class="center"><span class="flow-text">Contact</span></div>
+
+	<br>
+	<br>
+
+	<div class="container contact" id="#contact">
+		<div class="row justify-content-center">
+		<div class="col-2"></div>
+		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(211, 163, 135)">
+			<div class="row justify-content-center">
+			<div class="media col-12 justify-content-center" style="margin-left: -200px">
+				<div class="col-7">
+					<img src="assets/images/contact.jpg" class="rounded border border-info align-self-center img-fluid" alt="contact">
+				</div>
+				<div class="media-body ml-3">
+				<h1 class="mb-2">Contact</h1>
+				<p class="mb-2">You can find me on github at <a href="http://github.com/ngopaul">github.com/ngopaul</a>.</p>
+				<p class="mb-2">Get in contact with me on LinkedIn: <a href="http://linkedin.com/in/apaulngo">linkedin.com/in/apaulngo</a></p>
+				<p class="mb-2">For more contact information, please email <a href="mailto:paulngo123@gmail.com">paulngo123@gmail.com</a>.</p>
+				</div>
+			</div>
+			</div>
 		</div>
 		</div>
 	</div>
 	
+	
+	<br>
+	<br>
+
+	</div>
+
+	<footer>
+		<div>
+		<code>Last updated October 17th, 2018</code>
+		</div>
+	</footer>
+
+	<script src="javascript.js"></script>
+
 </body>
 </html>
