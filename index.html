@@ -18,10 +18,13 @@
   <!-- <link href="dist/css/bootstrap.min.css" rel="stylesheet"> -->
   <!-- 4.1 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="parallax.js-1.5.0/parallax.js"></script>
+
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -104,12 +107,14 @@
 				<p class="mb-2">In Davis, I developed my passions for engineering, science, and technology.</p>
 				<p>
 					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openbackground" aria-expanded="false" aria-controls="collapseExample">
-					More!
+					More! ⇓
 					</button>
 				</p>
 				</div>
 				<div class="col-7">
-				<img src="assets/images/campanile.jpg" class="rounded border border-dark align-self-center img-fluid" alt="campanile">
+					<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="assets/images/campanile.jpg" data-z-index="10" data-speed="0.8"> -->
+						<img src="assets/images/campanile.jpg" class="rounded border border-dark align-self-center img-fluid" alt="campanile">
+					<!-- </div> -->
 				</div>
 			</div>
 			</div>
@@ -146,7 +151,9 @@
 			<div class="row justify-content-center">
 			<div class="media col-12 justify-content-center" style="margin-left: -200px">
 				<div class="col-7">
-					<img src="assets/images/code.jpg" class="rounded border border-light align-self-center img-fluid" alt="code">
+					<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="assets/images/code.jpg" data-z-index="10" data-speed="0.8"> -->
+						<img src="assets/images/code.jpg" class="rounded border border-light align-self-center img-fluid" alt="code">
+					<!-- </div> -->
 				</div>
 				<div class="media-body ml-3">
 				<h1 class="mb-2">Projects</h1>
@@ -154,7 +161,7 @@
 				<p class="mb-2">I firmly believe that creativity is like powering a light- for, the more you power it, the more you can see!</p>
 				<p>
 					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openprojects" aria-expanded="false" aria-controls="collapseExample">
-					Powering my light
+					Powering my light ⇓
 					</button>
 				</p>
 				</div>
@@ -168,10 +175,47 @@
 		<div class = "col-6">
 		<div class="collapse" id="openprojects">
 			<div class="card card-body">
-				<span class="left"><h3>Gitlet</h3></span><span class="right">Right aligned</span>​
-				<h3>AvalonAI</h3><span class="right">Right aligned</span>​
-				<h3>Time</h3><span class="right">Right aligned</span>​
-				<h3>Dual Extrustion for Bioprinting</h3><span class="right">Right aligned</span>​
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>Gitlet</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Summer 2018</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						Gitlet, developed for a computer science course, is a version control system modeled off of GitHub. It has a majority of the features that GitHub does and operates via terminal commands. Gitlet was written in Java with two project partners at UC Berkeley.
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>Avalon AI</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Fall 2018</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						Avalon AI is a python-based computer system that plays a social deception game, called Avalon. It stores data in a SQL database and uses heuristics to deduce character roles (which is an essential part of the game). It uses pygame as a UI.
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>Dual Extrusion for Bioprinting</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Fall 2018</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						"Dual Extrusion for Bioprinting" received a Jacobs Innovation Catalyst Spark Grant in the Fall of 2018. The goal of the project was to develop a modular dual extrusion head for bioprinting gels and cell materials. The head would be able to be mounted on a conventional 3D printer. Though still in progress, an initial prototype demonstrates two gels which can be extruded independently and in a controlled mix, while on the printer.
+					</div>
+				</div>
 			</div>
 		</div>
 		</div>
@@ -188,15 +232,17 @@
 				<div class="media-body ml-3">
 				<h1 class="mb-2">Hobbies</h1>
 				<p class="mb-2">My free time is always a time to learn, and to have fun while doing so!</p>
-				<p class="mb-2">Whether it be in-person board games or stratetic games online, I'm always ready to have some fun with tactics!</p>
+				<p class="mb-2">Whether it be in-person board games, photography, or stratetic games online, I'm always ready to have some fun!</p>
 				<p>
 					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openhobbies" aria-expanded="false" aria-controls="collapseExample">
-					What tactics?
+					What tactics? ⇓
 					</button>
 				</p>
 				</div>
 				<div class="col-7">
-				<img src="assets/images/chess.jpg" class="rounded border border-success align-self-center img-fluid" alt="chess">
+					<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="assets/images/chess.JPG" data-z-index="10" data-speed="0.8"> -->
+						<img src="assets/images/chess.JPG" class="rounded border border-success align-self-center img-fluid" alt="chess">
+					<!-- </div> -->
 				</div>
 			</div>
 			</div>
@@ -209,9 +255,61 @@
 		<div class = "col-6">
 		<div class="collapse" id="openhobbies">
 			<div class="card card-body">
-			Chess
-			Avalon
-			Rainbow Six: Siege
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>Chess</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Lifelong</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						Chess has always been one of my favorite pasttimes.
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>Photography</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Lifelong</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						I love taking environmental <a href="https://instagram.com/pngotos" target="_blank">photos</a> with my DSLR, and am currently learning how to take portraits. 
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>Board Games</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Lifelong</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						I'm always ready for a (very) long game of Risk, Monopoly, Avalon, or the like!
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>Rainbow Six: Siege</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">2017+</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						It's an FPS with enough tactics to get me interested.
+					</div>
+				</div>
 			</div>
 		</div>
 		</div>
@@ -227,12 +325,14 @@
 			<div class="row justify-content-center">
 			<div class="media col-12 justify-content-center" style="margin-left: -200px">
 				<div class="col-7">
-					<img src="assets/images/contact.jpg" class="rounded border border-info align-self-center img-fluid" alt="contact">
+					<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="assets/images/contact.jpg" data-z-index="10" data-speed="0.8"> -->
+						<img src="assets/images/contact.jpg" class="rounded border border-info align-self-center img-fluid" alt="contact">
+					<!-- </div> -->
 				</div>
 				<div class="media-body ml-3">
 				<h1 class="mb-2">Contact</h1>
-				<p class="mb-2">You can find me on github at <a href="http://github.com/ngopaul">github.com/ngopaul</a>.</p>
-				<p class="mb-2">Get in contact with me on LinkedIn: <a href="http://linkedin.com/in/apaulngo">linkedin.com/in/apaulngo</a></p>
+				<p class="mb-2">You can find me on github at <a href="http://github.com/ngopaul" target="_blank">github.com/ngopaul</a>.</p>
+				<p class="mb-2">Get in contact with me on LinkedIn: <a href="http://linkedin.com/in/apaulngo" target="_blank">linkedin.com/in/apaulngo</a></p>
 				<p class="mb-2">For more contact information, please email <a href="mailto:paulngo123@gmail.com">paulngo123@gmail.com</a>.</p>
 				</div>
 			</div>
