@@ -88,3 +88,9 @@ color: inherit;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.hoverable:hover {
+    opacity: 0.90;
+    -webkit-box-shadow: 0 0 10px grey;
+        box-shadow: 0 0 10px grey;
+}

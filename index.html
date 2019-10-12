@@ -75,8 +75,8 @@
 	
 	<div class="container home" id="#home">
 		<div class="row justify-content-center">
-		<div class="col-2"></div>
-		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(181, 135, 211)">
+		<!-- <div class="col-2"></div> -->
+		<div class="col-8 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(181, 135, 211)">
 			<div class="row justify-content-center">
 			<div class="media col-12 justify-content-center" style="margin-left: -200px">
 				<div class="col-7">
@@ -84,8 +84,8 @@
 				</div>
 				<div class="media-body ml-3">
 				<h1 class="mb-2">Hello World.</h1>
-				<p class="mb-2">I'm Paul Ngo, a UC Berkeley sophomore double majoring in Electrical Engineering/Computer Science and Bioengineering.</p>
-				<p class="mb-2">Although this website is under maintenance, feel free take a look around!</p>
+				<p class="mb-2">I'm Paul Ngo, a UC Berkeley junior double majoring in Electrical Engineering & Computer Science and Bioengineering.</p>
+				<p class="mb-2">I enjoy working on mechanical engineering, electrical engineering, and computer science projects. I have a background in music, computer science, and robotics; photography and videography are my hobbies.</p>
 				</div>
 			</div>
 			</div>
@@ -98,25 +98,22 @@
   
 	<div class="container background" id="#background">
     <div class="row justify-content-center">
-		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(135, 149, 211)">
+		<div class="col-6 rounded justify-content-center pt-5 pb-5 hoverable" style="background-color:rgb(135, 149, 211)" class="btn" type="button btn-light" data-toggle="collapse" data-target="#openbackground" aria-expanded="false" aria-controls="collapseExample">
 			<div class="row justify-content-center">
-			<div class="media col-12 justify-content-center" style="margin-right: -200px">
+			
+				<div class="media col-12 justify-content-center" style="margin-right: -200px">
 				<div class="media-body mr-3">
 				<h1 class="mb-2">Background</h1>
-				<p class="mb-2">I was born in South California, and grew up in Davis, California, from elementary school to high school. </p>
-				<p class="mb-2">In Davis, I developed my passions for engineering, science, and technology.</p>
-				<p>
-					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openbackground" aria-expanded="false" aria-controls="collapseExample">
-					More! ⇓
-					</button>
-				</p>
+				<p class="mb-2">I grew up in Davis, California, attending Davis Senior High school and graduating in 2017. </p>
+				<p class="mb-2">My parents and schoolteachers in Davis helped me find my passion for engineering, science, and technology.</p>
 				</div>
 				<div class="col-7">
 					<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="assets/images/campanile.jpg" data-z-index="10" data-speed="0.8"> -->
 						<img src="assets/images/campanile.jpg" class="rounded border border-dark align-self-center img-fluid" alt="campanile">
 					<!-- </div> -->
 				</div>
-			</div>
+				</div>
+
 			</div>
 		</div>
 		<div class="col-2"></div>
@@ -127,15 +124,20 @@
 		<div class = "col-6">
 		<div class="collapse openbackground" id="openbackground">
 			<div class="card card-body">
-				In middle school and high school, I participated in several volunteer groups and associations, including NJHS (National Junior Honor Society) and 
-				CSF (California Scholarship Federation). In particular, I gained a lot out of my time as a member of Music From Home, a student group which organized 
-				musical recitals for an elderly home in Davis. I was a part of the photography and media team during my time there.
+				In middle school and high school, I participated in several volunteer groups and associations, 
+				including NJHS (National Junior Honor Society) and CSF (California Scholarship Federation). 
+				In particular, I gained a lot out of my time as a member of Music From Home, a student group 
+				which organized musical recitals for an elderly home in Davis. I was a part of the photography 
+				and media team during my time there.
 			</div>
 			<div class="card card-body">
-				In 2013, I joined my local FRC (First Robotics Competition) team, Team 1678: Citrus Circuits. In my years on the team, I grew to love this 
-				engineering family which I had found there. During my four years there, I gained experience with machine shop work and safety, electrical engineering 
-				skills, and began self-learning computer coding languages. Team 1678 won the FRC world championships in 2015. I became the electrical subteam lead 
-				in 2016, and enjoyed passing on the passion of teamwork and creativity to fellow members of the team.
+				In 2013, I joined my local FRC (First Robotics Competition) team, Team 1678: Citrus Circuits. 
+				In my years on the team, I grew to love this engineering family which I had found there. 
+				During my four years there, I gained experience with machine shop work and safety, electrical 
+				engineering skills, and began to self-learn coding languages (such as python). Team 1678 won the FRC 
+				world championships in 2015. I became the electrical subteam lead in 2016, and enjoyed passing 
+				on the passion of teamwork and creativity to fellow members of the team, through leadership and 
+				mentorship.
 			</div>
 		</div>
 		</div>
@@ -147,7 +149,7 @@
 	<div class="container projects" id="#projects">
 		<div class="row justify-content-center">
 		<div class="col-2"></div>
-		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(135, 211, 167)">
+		<div class="col-6 rounded justify-content-center pt-5 pb-5 hoverable" style="background-color:rgb(135, 211, 167)" class="btn" type="button btn-light" data-toggle="collapse" data-target="#openprojects" aria-expanded="false" aria-controls="collapseExample">
 			<div class="row justify-content-center">
 			<div class="media col-12 justify-content-center" style="margin-left: -200px">
 				<div class="col-7">
@@ -158,11 +160,9 @@
 				<div class="media-body ml-3">
 				<h1 class="mb-2">Projects</h1>
 				<p class="mb-2">In and outside of class, I enjoy putting together programs, games, and small crafts!</p>
-				<p class="mb-2">I firmly believe that creativity is like powering a light- for, the more you power it, the more you can see!</p>
-				<p>
-					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openprojects" aria-expanded="false" aria-controls="collapseExample">
-					Powering my light ⇓
-					</button>
+				<p class="mb-2">I love working on building things and learning new technologies and methods. 
+					I also work with my Berkeley project group, 
+					<a href="http://apt401.info" target="_blank">Apartment 401</a>.
 				</p>
 				</div>
 			</div>
@@ -177,6 +177,43 @@
 			<div class="card card-body">
 				<div class="row">
 					<div class="col-md-auto">
+						<h3>Color Control</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Fall 2018</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						Color Control was a project which allowed us to control lights in the house through a 
+						webapp and Google Home. A group of UC Berkeley students wired LED lights using a 
+						transistor control circuit for control with Raspberry Pi, used Python to control LED lights
+						with RGB channels using PWM and OS workarounds for more advanced functionalities, and
+						implemented a Flask server to handle GET requests from Google Home with IFTTT Webhooks, 
+						and POST requests from an interactive webapp.
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-auto">
+						<h3>BearMaps</h3>
+					</div>
+					<div class="col">
+						<p class="text-right">Summer 2018</p>​
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						BearMaps was developed for a computer science class at UC Berkeley. I developed a map rasterer
+						using OpenStreetMaps to represent the city of Berkeley in a dynamic web app, used the same data
+						to build a traversable graph, giving directions using the A* search algorithm, and used
+						tries to autocomplete location searches, and k-d trees to search for nearest neighbor points.
+					</div>
+				</div>
+				<br>
+
+				<div class="row">
+					<div class="col-md-auto">
 						<h3>Gitlet</h3>
 					</div>
 					<div class="col">
@@ -185,7 +222,9 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						Gitlet, developed for a computer science course, is a version control system modeled off of GitHub. It has a majority of the features that GitHub does and operates via terminal commands. Gitlet was written in Java with two project partners at UC Berkeley.
+						Gitlet, developed for a computer science course (COMPSCI 61B), is a version control system 
+						modeled off of GitHub. It has a majority of the features that GitHub does and operates via 
+						terminal commands. Gitlet was written in Java with two project partners at UC Berkeley.
 					</div>
 				</div>
 				<br>
@@ -199,7 +238,10 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						Avalon AI is a python-based computer system that plays a social deception game, called Avalon. It stores data in a SQL database and uses heuristics to deduce character roles (which is an essential part of the game). It uses pygame as a UI.
+						Avalon AI is a python-based computer system that plays a social deception game, called Avalon. 
+						It stores data in a SQL database and uses heuristics to deduce character roles (which is an 
+						essential part of the game). It uses pygame as a UI for entering data about game actions and 
+						game state.
 					</div>
 				</div>
 				<br>
@@ -213,7 +255,11 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						"Dual Extrusion for Bioprinting" received a Jacobs Innovation Catalyst Spark Grant in the Fall of 2018. The goal of the project was to develop a modular dual extrusion head for bioprinting gels and cell materials. The head would be able to be mounted on a conventional 3D printer. Though still in progress, an initial prototype demonstrates two gels which can be extruded independently and in a controlled mix, while on the printer.
+						"Dual Extrusion for Bioprinting" received a Jacobs Innovation Catalyst Spark Grant in the Fall of 
+						2018. The goal of the project was to develop a modular dual extrusion head for bioprinting gels 
+						and cell materials. The head would be able to be mounted on a conventional 3D printer. Though still 
+						in progress, an initial prototype demonstrates two gels which can be extruded independently and 
+						in a controlled mix, while on the printer.
 					</div>
 				</div>
 			</div>
@@ -226,18 +272,13 @@
   
 	<div class="container hobbies" id="#hobbies">
 		<div class="row justify-content-center">
-		<div class="col-6 rounded justify-content-center pt-5 pb-5" style="background-color:rgb(95, 206, 206)">
+		<div class="col-6 rounded justify-content-center pt-5 pb-5 hoverable" style="background-color:rgb(95, 206, 206)" class="btn" type="button btn-light" data-toggle="collapse" data-target="#openhobbies" aria-expanded="false" aria-controls="collapseExample">
 			<div class="row justify-content-center">
 			<div class="media col-12 justify-content-center" style="margin-right: -200px">
 				<div class="media-body ml-3">
 				<h1 class="mb-2">Hobbies</h1>
 				<p class="mb-2">My free time is always a time to learn, and to have fun while doing so!</p>
 				<p class="mb-2">Whether it be in-person board games, photography, or stratetic games online, I'm always ready to have some fun!</p>
-				<p>
-					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#openhobbies" aria-expanded="false" aria-controls="collapseExample">
-					What tactics? ⇓
-					</button>
-				</p>
 				</div>
 				<div class="col-7">
 					<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="assets/images/chess.JPG" data-z-index="10" data-speed="0.8"> -->
@@ -257,7 +298,7 @@
 			<div class="card card-body">
 				<div class="row">
 					<div class="col-md-auto">
-						<h3>Chess</h3>
+						<h3>Board Games</h3>
 					</div>
 					<div class="col">
 						<p class="text-right">Lifelong</p>​
@@ -265,7 +306,8 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						Chess has always been one of my favorite pasttimes.
+						I'm always ready for a game of Risk, Monopoly, Avalon, chess, or the like!
+						I started playing chess in elementary school, and it has remained one of my hobbies. I'm always down for a game!
 					</div>
 				</div>
 				<br>
@@ -279,27 +321,13 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						I love taking environmental <a href="https://instagram.com/pngotos" target="_blank">photos</a> with my DSLR, and am currently learning how to take portraits. 
+						I love taking environmental <a href="https://instagram.com/pngotos" target="_blank">photos</a> with my DSLR. 
 					</div>
 				</div>
 				<br>
 				<div class="row">
 					<div class="col-md-auto">
-						<h3>Board Games</h3>
-					</div>
-					<div class="col">
-						<p class="text-right">Lifelong</p>​
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						I'm always ready for a (very) long game of Risk, Monopoly, Avalon, or the like!
-					</div>
-				</div>
-				<br>
-				<div class="row">
-					<div class="col-md-auto">
-						<h3>Rainbow Six: Siege</h3>
+						<h3>Rainbow Six: Siege, Smash Ultimate</h3>
 					</div>
 					<div class="col">
 						<p class="text-right">2017+</p>​
@@ -307,7 +335,7 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						It's an FPS with tactics.
+						An FPS that I enjoy and a fun party game to play with friends.
 					</div>
 				</div>
 			</div>
@@ -349,7 +377,7 @@
 
 	<footer>
 		<div>
-		<code>Last updated December 17th, 2018</code>
+		<code>Last updated October 11th, 2019</code>
 		</div>
 	</footer>
 
