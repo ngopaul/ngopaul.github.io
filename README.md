@@ -1,1 +1,3 @@
-# (ngopaul.github.io)[http://ngopaul.github.io]
+# Paul Ngo's Personal Website
+Website link:
+http://ngopaul.github.io
