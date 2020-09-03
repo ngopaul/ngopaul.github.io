@@ -431,14 +431,12 @@
                     else {
                         offset = elOffset;
                     }
-                    console.log(offset);
-                    console.log(elOffset);
                     $(this.hash).effect("highlight", {}, 3000);
                     // $.smoothScroll({ speed: 700 }, offset);
 
                     $('html, body').animate({
                         scrollTop: offset // target.offset().top
-                    }, 10, function() {
+                    }, 500, function() {
                         // Callback after animation
                         // Must change focus!
                         var $target = $(target);
