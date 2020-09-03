@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
-<body data-gr-c-s-loaded="true" data-spy="scroll" data-target="#navbar" data-offset="0" style="position:relative">
+<body data-gr-c-s-loaded="true" data-spy="scroll" data-target="#navbar" data-offset="0" style="position:relative"
+      onresize="setNavbarPadding()" onload="setNavbarPadding()">
 
 <nav id="navbar" class="navbar navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">Music 109</a>
@@ -35,7 +36,6 @@
         </li>
     </ul>
 </nav>
-<br/><br/><br/>
 
 <div class="container">
     <h3>Notes</h3>
@@ -231,6 +231,9 @@
             <button class="btn btn-link" data-toggle="collapse" data-target="#assignments-collapse2" aria-expanded="false" aria-controls="assignments-collapse2">
                 <b>Project 1.2: Composing Melodies with Tuneblocks. Due September 22nd</b>
             </button></h5></div><div id="assignments-collapse2" class="collapse" aria-labelledby="project-1-2" data-parent="#assignments-accordion"><div class="card-body" style="height:100vh">
+            <h3>FAQ</h3>
+            Q: How long should the final tune be?
+            A: An appropriate length.
             <iframe src="file/project-1-2.pdf" width="100%" height="100%">This browser does not support PDFs.</iframe>
         </div></div></div>
         <div class="card"><div class="card-header" id="paper-1"><h5 class="mb-0">
@@ -393,13 +396,10 @@
             interval: 0
         }
     );
-    // $("body").on("click", function() {
-    //     href = window.location.href;
-    //     values = href.split('#');
-    //     if (values.length > 1) {
-    //         alert(values[1]);
-    //     }
-    // });
+
+    function setNavbarPadding() {
+        document.body.style.paddingTop = document.getElementById('navbar').getBoundingClientRect().height.toString() + "px";
+    }
 
     $('a[href*="#"]')
         // Remove links that don't actually link to anything
