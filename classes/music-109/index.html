@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
+<script>
+    function setNavbarPadding() {
+        document.body.style.paddingTop = document.getElementById('navbar').getBoundingClientRect().height.toString() + "px";
+    }
+</script>
+
 <body data-gr-c-s-loaded="true" data-spy="scroll" data-target="#navbar" data-offset="0" style="position:relative"
       onresize="setNavbarPadding()" onload="setNavbarPadding()">
 
@@ -448,10 +454,6 @@
             interval: 0
         }
     );
-
-    function setNavbarPadding() {
-        document.body.style.paddingTop = document.getElementById('navbar').getBoundingClientRect().height.toString() + "px";
-    }
 
     $('a[href*="#"]')
         // Remove links that don't actually link to anything
