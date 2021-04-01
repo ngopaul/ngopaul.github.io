@@ -29,7 +29,9 @@
                 raw_paste = raw_paste.replaceAll("Attendance\n", '')
                 raw_paste = raw_paste.replaceAll("Weekly Quizzes\n", '')
                 raw_paste = raw_paste.replaceAll("Assignments\n", '')
+                raw_paste = raw_paste.replaceAll("Spring 2021 Midterm Exam\n", "a-workaround-for-chrome")
                 raw_paste = raw_paste.replaceAll("Midterm Exam\n", '')
+                raw_paste = raw_paste.replaceAll("a-workaround-for-chrome", "Spring 2021 Midterm Exam\n")
                 raw_paste = raw_paste.replaceAll("Final Exam\n", '')
 
                 raw_paste = raw_paste.replaceAll("\r", "\n")
@@ -178,20 +180,36 @@
         <br>
         <button onclick="parseCalculateDisplayGrade()">Submit</button>
         <br>
-        <div>
-            <p>Attendance grade:</p>
-            <p id="attendance-grade"></p>
-            <p>Weekly Quizzes grade:</p>
-            <p id="weekly-quizzes-grade"></p>
-            <p>Assignments grade:</p>
-            <p id="assignments-grade"></p>
-            <p>Midterm Exam grade:</p>
-            <p id="midterm-exam-grade"></p>
-            <p>Final Exam grade:</p>
-            <p id="final-exam-grade"></p>
-            <p>(current) Class grade:</p>
-            <p id="class-grade"></p>
-        </div>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Attendance grade (4%)</td>
+                <td id="attendance-grade" style="float: right"></td>
+            </tr>
+            <tr>
+                <td>Weekly Quizzes grade (11%)</td>
+                <td id="weekly-quizzes-grade" style="float: right"></td>
+            </tr>
+            <tr>
+                <td>Assignments grade (35%)</td>
+                <td id="assignments-grade" style="float: right"></td>
+            </tr>
+            <tr>
+                <td>Midterm Exam grade (20%)</td>
+                <td id="midterm-exam-grade" style="float: right"></td>
+            </tr>
+            <tr>
+                <td>Final Exam grade (30%)</td>
+                <td id="final-exam-grade" style="float: right"></td>
+            </tr>
+            <tr>
+                <td>(current) Class grade</td>
+                <td id="class-grade" style="float: right"></td>
+            </tr>
+        </table>
 <!--        <input type="submit" name="Submit" value="Submit">-->
     </form>
 </div>
