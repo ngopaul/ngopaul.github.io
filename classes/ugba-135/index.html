@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Paul Ngo</title>
+    <title>UGBA 135: Grade Calculator</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -38,6 +38,11 @@
                 raw_paste = raw_paste.replaceAll("\t\t", " \t\n")
             }
             var split_items = raw_paste.split(" \t\n")
+
+            if (document.getElementById('input-final-exam-grade-activator').checked) {
+                split_items.push(`Final Exam\tArbitrary Date\t${document.getElementById('input-final-exam-grade').value.replace("/", "\t")}`)
+            }
+
             var graded_items = split_items.filter(function(value, index, arr){
                 let parsed_value = value.trim().split("\t")
                 return parsed_value[parsed_value.length - 2] !== '' && parsed_value.length > 3;
@@ -130,11 +135,42 @@
 <br/>
 
 <div class="container-fluid" id="home">
-    <h1>Grade Calculator</h1>
+    <h1>UGBA 135: Grade Calculator</h1>
+
+    Calculator has only been tested on desktop and mobile on Chrome and Firefox. Copy
+    from the bcourses website using the same browser as for the calculator.
+    <br/>
+    <br/>
+    <p>There will be one midterm (20 points) and a final exam (30 points).
+        There are five homework Assignments (5 x 7 points each = 35 points),
+        online quizzes based on the videos (11 points), and 4  points for class
+        attendance based on in-class quizzes for a course total of 100 points.
+        (There will be an out of class alternative to the in-class quizzes for
+        those unable to attend class.) All assignments, quizzes, and exams are
+        on bCourses and are open book.  Business majors will receive a letter grade.
+        Other students may elect to receive a letter grade or P/NP.
+        The minimum grade for a Pass is C-.  Your course grade is based on total points.
+    </p>
+    <b>Point guidelines are:
+        A+=98-100 points, A=94-97 points, A-=91-93 points, B+=88-90 points,
+        B=84-87, B-=81-83 points, C+=78-80 points, C=74-77 points,
+        C-=71-73 points, D=65-70 points, and below 65 is an F.</b>
+    <br/>
+    <br/>
 
     <form id="grade-calculator-form" onsubmit="parseCalculateDisplayGrade()">
-        <label for="paste-input">Paste your grades here</label>
+        <label for="paste-input">Paste your grades from bcourses here: </label>
         <textarea id="paste-input" name="paste-input"></textarea>
+        <br>
+
+        <label for="input-final-exam-grade">
+            <input type="checkbox" id="input-final-exam-grade-activator" onclick="var input = document.getElementById('input-final-exam-grade'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}"  />
+            Use manual input final exam grade (format 'x/100'):
+        </label>
+        <input type="text" id="input-final-exam-grade" name="input-final-exam-grade" disabled="true" />
+
+        <br>
+        <button onclick="parseCalculateDisplayGrade()">Submit</button>
         <br>
         <div>
             <p>Attendance grade:</p>
@@ -151,7 +187,6 @@
             <p id="class-grade"></p>
         </div>
 <!--        <input type="submit" name="Submit" value="Submit">-->
-        <button onclick="parseCalculateDisplayGrade()">Submit</button>
     </form>
 </div>
 
