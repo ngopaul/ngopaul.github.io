@@ -15,7 +15,6 @@
 
     <script>
         function parseCalculateDisplayGrade() {
-            var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
             var isFirefox = typeof InstallTrigger !== 'undefined';
 
             var raw_paste = document.getElementById("paste-input").value
@@ -27,6 +26,12 @@
             }
             else {
                 // console.log("Im here")
+                raw_paste = raw_paste.replaceAll("Attendance\n", '')
+                raw_paste = raw_paste.replaceAll("Weekly Quizzes\n", '')
+                raw_paste = raw_paste.replaceAll("Assignments\n", '')
+                raw_paste = raw_paste.replaceAll("Midterm Exam\n", '')
+                raw_paste = raw_paste.replaceAll("Final Exam\n", '')
+
                 raw_paste = raw_paste.replaceAll("\r", "\n")
                 raw_paste = raw_paste.replaceAll("\t\t\n", "\n")
                 raw_paste = raw_paste.replaceAll("\t\n\n", "\t\n\t")
@@ -47,7 +52,7 @@
                 let parsed_value = value.trim().split("\t")
                 return parsed_value[parsed_value.length - 2] !== '' && parsed_value.length > 3;
             })
-            console.log(graded_items)
+            // console.log(graded_items)
             var attendance = graded_items.filter(function(value, index, arr){
                 return value.includes("Attendance")
             })
