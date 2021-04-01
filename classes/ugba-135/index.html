@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Paul Ngo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.png">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script>
+        function parseCalculateDisplayGrade() {
+            var raw_paste = document.getElementById("paste-input").value
+            raw_paste = raw_paste.replaceAll("\r", "\n")
+            raw_paste = raw_paste.replaceAll("\t\n\t", "\t")
+            raw_paste = raw_paste.replaceAll("\t\t\n", "\t")
+            raw_paste = raw_paste.replaceAll("\n\t", "\t")
+            var split_items = raw_paste.split(" \t\n")
+            // console.log(split_items)
+            var graded_items = split_items.filter(function(value, index, arr){
+                let parsed_value = value.split("\t")
+                return parsed_value[parsed_value.length - 2] !== '';
+            })
+            // console.log(graded_items)
+            var attendance = graded_items.filter(function(value, index, arr){
+                return value.includes("Attendance")
+            })
+            var weekly_quizzes = graded_items.filter(function(value, index, arr){
+                return value.includes("Videos Quiz")
+            })
+            var assignments = graded_items.filter(function(value, index, arr){
+                return value.includes("Assignment")
+            })
+            var midterm_exam = graded_items.filter(function(value, index, arr){
+                return value.includes("Midterm")
+            })
+            var final_exam = graded_items.filter(function(value, index, arr){
+                return value.includes("Final")
+            })
+
+            attendance = attendance.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
+            weekly_quizzes = weekly_quizzes.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
+            assignments = assignments.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
+            midterm_exam = midterm_exam.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
+            final_exam = final_exam.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
+
+            attendance.push([0, 0])
+            weekly_quizzes.push([0, 0])
+            assignments.push([0, 0])
+            midterm_exam.push([0, 0])
+            final_exam.push([0, 0])
+
+            // console.log(attendance)
+            // console.log(weekly_quizzes)
+            // console.log(assignments)
+            // console.log(midterm_exam)
+            // console.log(final_exam)
+
+            var attendance_grade = attendance.reduce((accumulator, current_value) => [accumulator[0] + current_value[0], accumulator[1] + current_value[1]])
+            var weekly_quizzes_grade = weekly_quizzes.reduce((accumulator, current_value) => [accumulator[0] + current_value[0], accumulator[1] + current_value[1]])
+            var assignments_grade = assignments.reduce((accumulator, current_value) => [accumulator[0] + current_value[0], accumulator[1] + current_value[1]])
+            var midterm_exam_grade = midterm_exam.reduce((accumulator, current_value) => [accumulator[0] + current_value[0], accumulator[1] + current_value[1]])
+            var final_exam_grade = final_exam.reduce((accumulator, current_value) => [accumulator[0] + current_value[0], accumulator[1] + current_value[1]])
+
+            console.log(attendance_grade)
+            console.log(weekly_quizzes_grade)
+            console.log(assignments_grade)
+            console.log(midterm_exam_grade)
+            console.log(final_exam_grade)
+
+            attendance_grade.push(attendance_grade[0]/attendance_grade[1])
+            weekly_quizzes_grade.push(weekly_quizzes_grade[0]/weekly_quizzes_grade[1])
+            assignments_grade.push(assignments_grade[0]/assignments_grade[1])
+            midterm_exam_grade.push(midterm_exam_grade[0]/midterm_exam_grade[1])
+            final_exam_grade.push(final_exam_grade[0]/final_exam_grade[1])
+
+            document.getElementById("attendance-grade").innerText = `${attendance_grade[0]}/${attendance_grade[1]} = ${attendance_grade[2]}`
+            document.getElementById("weekly-quizzes-grade").innerText = `${weekly_quizzes_grade[0]}/${weekly_quizzes_grade[1]} = ${weekly_quizzes_grade[2]}`
+            document.getElementById("assignments-grade").innerText = `${assignments_grade[0]}/${assignments_grade[1]} = ${assignments_grade[2]}`
+            document.getElementById("midterm-exam-grade").innerText = `${midterm_exam_grade[0]}/${midterm_exam_grade[1]} = ${midterm_exam_grade[2]}`
+            document.getElementById("final-exam-grade").innerText = `${final_exam_grade[0]}/${final_exam_grade[1]} = ${final_exam_grade[2]}`
+
+            var all_grade = [attendance_grade, weekly_quizzes_grade, assignments_grade, midterm_exam_grade, final_exam_grade]
+            var weights = [0.04, 0.11, 0.35, 0.20, 0.30] // for attendance, weekly quizzes, assignments, midterm exam, and final exam respectively
+            var weights_to_use = [
+                !isNaN(attendance_grade[2]),
+                !isNaN(weekly_quizzes_grade[2]),
+                !isNaN(assignments_grade[2]),
+                !isNaN(midterm_exam_grade[2]),
+                !isNaN(final_exam_grade[2])
+            ]
+
+            var total_used_weight = 0;
+            var total_grade_value = 0;
+            for (let i = 0; i < 5; i++) {
+                console.log(weights_to_use[i])
+                if (weights_to_use[i]) {
+                    total_used_weight += weights[i];
+                    total_grade_value += weights[i] * all_grade[i][2];
+                }
+            }
+            document.getElementById("class-grade").innerText = `${total_grade_value/total_used_weight}`
+        }
+    </script>
+</head>
+
+<body>
+
+<br/>
+
+<div class="container-fluid" id="home">
+    <h1>Grade Calculator</h1>
+
+    <form id="grade-calculator-form" onsubmit="parseCalculateDisplayGrade()">
+        <label for="paste-input">Paste your grades here</label>
+        <textarea id="paste-input" name="paste-input"></textarea>
+        <br>
+        <div>
+            <p>Attendance grade:</p>
+            <p id="attendance-grade"></p>
+            <p>Weekly Quizzes grade:</p>
+            <p id="weekly-quizzes-grade"></p>
+            <p>Assignments grade:</p>
+            <p id="assignments-grade"></p>
+            <p>Midterm Exam grade:</p>
+            <p id="midterm-exam-grade"></p>
+            <p>Final Exam grade:</p>
+            <p id="final-exam-grade"></p>
+            <p>(current) Class grade:</p>
+            <p id="class-grade"></p>
+        </div>
+<!--        <input type="submit" name="Submit" value="Submit">-->
+        <button onclick="parseCalculateDisplayGrade()">Submit</button>
+    </form>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+<script>
+    var form = document.getElementById("grade-calculator-form");
+    function handleForm(event) { event.preventDefault(); }
+    form.addEventListener('submit', handleForm);
+</script>
+
+</body>
+</html>
