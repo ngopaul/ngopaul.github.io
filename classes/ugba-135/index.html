@@ -15,18 +15,34 @@
 
     <script>
         function parseCalculateDisplayGrade() {
+            var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+            var isFirefox = typeof InstallTrigger !== 'undefined';
+
             var raw_paste = document.getElementById("paste-input").value
-            raw_paste = raw_paste.replaceAll("\r", "\n")
-            raw_paste = raw_paste.replaceAll("\t\n\t", "\t")
-            raw_paste = raw_paste.replaceAll("\t\t\n", "\t")
-            raw_paste = raw_paste.replaceAll("\n\t", "\t")
+            if (isFirefox) {
+                raw_paste = raw_paste.replaceAll("\r", "\n")
+                raw_paste = raw_paste.replaceAll("\t\n\t", "\t")
+                raw_paste = raw_paste.replaceAll("\t\t\n", "\t")
+                raw_paste = raw_paste.replaceAll("\n\t", "\t")
+            }
+            else {
+                // console.log("Im here")
+                raw_paste = raw_paste.replaceAll("\r", "\n")
+                raw_paste = raw_paste.replaceAll("\t\t\n", "\n")
+                raw_paste = raw_paste.replaceAll("\t\n\n", "\t\n\t")
+                raw_paste = raw_paste.replaceAll("\n\n", "\t")
+                raw_paste = raw_paste.replaceAll("\t\n\t", " \t\n")
+
+                raw_paste = raw_paste.replaceAll("\t\n", " \t\t")
+                raw_paste = raw_paste.replaceAll("\n", " \t")
+                raw_paste = raw_paste.replaceAll("\t\t", " \t\n")
+            }
             var split_items = raw_paste.split(" \t\n")
-            // console.log(split_items)
             var graded_items = split_items.filter(function(value, index, arr){
-                let parsed_value = value.split("\t")
-                return parsed_value[parsed_value.length - 2] !== '';
+                let parsed_value = value.trim().split("\t")
+                return parsed_value[parsed_value.length - 2] !== '' && parsed_value.length > 3;
             })
-            // console.log(graded_items)
+            console.log(graded_items)
             var attendance = graded_items.filter(function(value, index, arr){
                 return value.includes("Attendance")
             })
@@ -43,11 +59,11 @@
                 return value.includes("Final")
             })
 
-            attendance = attendance.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
-            weekly_quizzes = weekly_quizzes.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
-            assignments = assignments.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
-            midterm_exam = midterm_exam.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
-            final_exam = final_exam.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score ", "")), parseFloat(val.split("\t")[3])])
+            attendance = attendance.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score", "")), parseFloat(val.split("\t")[3])])
+            weekly_quizzes = weekly_quizzes.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score", "")), parseFloat(val.split("\t")[3])])
+            assignments = assignments.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score", "")), parseFloat(val.split("\t")[3])])
+            midterm_exam = midterm_exam.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score", "")), parseFloat(val.split("\t")[3])])
+            final_exam = final_exam.map(val => [parseFloat(val.split("\t")[2].replaceAll("Click to test a different score", "")), parseFloat(val.split("\t")[3])])
 
             attendance.push([0, 0])
             weekly_quizzes.push([0, 0])
@@ -67,11 +83,11 @@
             var midterm_exam_grade = midterm_exam.reduce((accumulator, current_value) => [accumulator[0] + current_value[0], accumulator[1] + current_value[1]])
             var final_exam_grade = final_exam.reduce((accumulator, current_value) => [accumulator[0] + current_value[0], accumulator[1] + current_value[1]])
 
-            console.log(attendance_grade)
-            console.log(weekly_quizzes_grade)
-            console.log(assignments_grade)
-            console.log(midterm_exam_grade)
-            console.log(final_exam_grade)
+            // console.log(attendance_grade)
+            // console.log(weekly_quizzes_grade)
+            // console.log(assignments_grade)
+            // console.log(midterm_exam_grade)
+            // console.log(final_exam_grade)
 
             attendance_grade.push(attendance_grade[0]/attendance_grade[1])
             weekly_quizzes_grade.push(weekly_quizzes_grade[0]/weekly_quizzes_grade[1])
@@ -98,7 +114,7 @@
             var total_used_weight = 0;
             var total_grade_value = 0;
             for (let i = 0; i < 5; i++) {
-                console.log(weights_to_use[i])
+                // console.log(weights_to_use[i])
                 if (weights_to_use[i]) {
                     total_used_weight += weights[i];
                     total_grade_value += weights[i] * all_grade[i][2];
