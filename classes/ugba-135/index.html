@@ -20,6 +20,7 @@
             var raw_paste = document.getElementById("paste-input").value
             if (isFirefox) {
                 raw_paste = raw_paste.replaceAll("\r", "\n")
+                raw_paste = raw_paste.replaceAll(" \tlate ", ' ')
                 raw_paste = raw_paste.replaceAll("\t\n\t", "\t")
                 raw_paste = raw_paste.replaceAll("\t\t\n", "\t")
                 raw_paste = raw_paste.replaceAll("\n\t", "\t")
@@ -35,6 +36,7 @@
                 raw_paste = raw_paste.replaceAll("Final Exam\n", '')
 
                 raw_paste = raw_paste.replaceAll("\r", "\n")
+                raw_paste = raw_paste.replaceAll("\nLATE", '\t')
                 raw_paste = raw_paste.replaceAll("\t\t\n", "\n")
                 raw_paste = raw_paste.replaceAll("\t\n\n", "\t\n\t")
                 raw_paste = raw_paste.replaceAll("\n\n", "\t")
