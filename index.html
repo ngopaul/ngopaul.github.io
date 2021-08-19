@@ -1,316 +1,103 @@
 <!DOCTYPE html>
-<!-- saved from url=(0034)http://iamdustan.com/smoothscroll/ -->
-<html lang="en">
+<html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Paul Ngo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.png">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
 </head>
 
-<body data-gr-c-s-loaded="true" data-spy="scroll" data-target="#navbar" data-offset="0" style="position:relative">
+<body style="background-color: #3c4041">
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+<!--        <div style="height: 25%">-->
+<!--            <h3></h3>-->
+<!--        </div>-->
 
-<nav id="navbar" class="navbar navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#">Paul Ngo</a>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#background">Background</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#hobbies">Hobbies</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-        </li>
-    </ul>
-</nav>
+        <ul class="list-unstyled components">
+            <li>
+                <h2><a href="https://www.linkedin.com/in/apaulngo/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></h2>
+            </li>
+            <li>
+                <h2><a href="https://github.com/ngopaul/" target="_blank"><i class="fab fa-github"></i> Github</a></h2>
+            </li>
+            <li>
+                <h2><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></h2>
+            </li>
+            <li>
+                <h2><a href="mailto:paulngo123@gmail.com"><i class="fas fa-envelope"></i> Email</a></h2>
+            </li>
+        </ul>
 
+        <ul class="list-unstyled CTAs">
 
-<div class="container-fluid" id="home">
-    <br/><br/><br/>
-    <br/><br/><br/>
-    <div class="row justify-content-center">
-        <div class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-            <figure class="figure">
-                <img src="assets/images/my face.jpg"
-                     class="rounded border border-dark align-self-center img-fluid" alt="Profile Picture">
-                <figcaption class="figure-caption text-center">Profile Picture</figcaption>
-            </figure>
+        </ul>
+    </nav>
 
-        </div>
-        <div class="col col-sm col-md col-lg col-xl">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Hello World.</h5>
-                    <code style="color:black" class="card-text">
-                        My name is Paul Ngo. I am a UC Berkeley senior double majoring in
-                        Electrical Engineering & Computer Science and Bioengineering.
-                        I enjoy working on mechanical engineering, electrical engineering, and
-                        computer science projects. I have a background in music, computer science, and
-                        robotics. I enjoy photography and board games in my free time.</code>
+    <!-- Page Content  -->
+    <div id="content">
+
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-align-left"></i>
+            <span></span>
+        </button>
+
+        <div style="height: 10%"></div>
+
+        <div class="container-fluid" style="text-align: center">
+            <img src="assets/images/my%20face.jpg" class="rounded float-start" alt="Profile Picture" style="width: 30%; height: 30%">
+            <br/><br/>
+            <h1>Paul Ngo</h1>
+            <br/>
+            <h5>BS Electrical Engineering and Computer Science, BS Bioengineering, The University of California, Berkeley - 2021</h5>
+            <h5>MS Electrical Engineering and Computer Science, The University of California, Berkeley - 2022</h5>
+
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <p>I am a Masters student at UC Berkeley studying machine learning. I enjoy working on mechanical engineering,
+                            electrical engineering, and computer science projects. I enjoy making music, doing photography, and
+                            playing board games in my free time. </p>
+                    </div>
                 </div>
             </div>
+
         </div>
+
+
+
 
     </div>
 </div>
 
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="assets/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-<div class="container-fluid" id="background">
-    <br/><br/><br/>
-    <div class="row justify-content-center">
-        <div class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-            <figure class="figure">
-                <img src="assets/images/campanile.jpg" class="rounded border border-dark align-self-center img-fluid"
-                     alt="campanile">
-                <figcaption class="figure-caption text-center">Campanile at sunrise in the spring</figcaption>
-            </figure>
-        </div>
-        <div class="col col-sm col-md col-lg col-xl">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Background and Extracurricular</h5>
-                    <code style="color:black" class="card-text">
-                        I grew up in Davis, California. attending Davis Senior High school and graduating in 2017.
-                        My community in Davis inspired my passion for the STEM field (engineering, science, etc.), as
-                        well as my interest in education and tutoring.
-                        <br/><br/>
-                        In middle school and high school, I participated in NJHS (National Junior Honor Society)
-                        and CSF (California Scholarship Federation). I gained a lot out of my time as a member of
-                        Music From Home, a student group which organized musical recitals for an elderly home.
-                        <br/><br/>
-                        In 2013, I joined the Davis FRC (First Robotics Competition) team,
-                        <a href="https://www.citruscircuits.org/" target="_blank">Team 1678: Citrus Circuits</a>. During
-                        my
-                        four years there, I gained machine shop and safety experience, electrical engineering
-                        skills, and began to learn my first programming language - Python. I am happy to have been a
-                        part of Team 1678's FRC world champion title in 2015.
-                        I became the electrical sub-team lead in 2016.
-                        <br/><br/>
-                        I attended UC Berkeley starting in Fall 2017.
-                        I was the drafting team lead for the
-                        <a href="https://steelbridge.berkeley.edu/" target="_blank">
-                            Steel Bridge Competition Team at UCB</a>,
-                        and an engineering co-lead for
-                        <a href="https://bioprinting.berkeley.edu/" target="_blank">Bioprinting@Berkeley</a>. I tutored
-                        for the
-                        Residential Halls Tutoring program in Physics.
-                    </code>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container-fluid" id="projects">
-    <br/><br/><br/>
-    <div class="row justify-content-center">
-        <div class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-            <figure class="figure">
-                <img src="assets/images/code.jpg" class="rounded border border-dark align-self-center img-fluid"
-                     alt="code">
-                <figcaption class="figure-caption text-center">Code for Avalon AI</figcaption>
-            </figure>
-        </div>
-        <div class="col col-sm col-md col-lg col-xl">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Projects</h5>
-                    <code style="color:black" class="card-text">
-                        In and outside of class, I enjoy putting together programs, games, and small crafts!
-                        I love working on building things and learning new technologies and methods. Here are some of my
-                        favorite projects!
-                        <br/><br/>
-                        <b>Color Control (personal project)</b><br/>
-                        Fall 2018<br/>
-                        Color Control was a project which allowed me and my apartment roommates to control lights in the
-                        house through a webapp and
-                        Google Home. We wired LED lights using a transistor control circuit
-                        for control with Raspberry Pi, used Python to control LED lights with RGB channels using PWM and
-                        OS workarounds for more advanced functionalities, and implemented a Flask server to handle GET
-                        requests from Google Home with IFTTT Webhooks, and POST requests from an interactive webapp.
-                        <br/><br/>
-                        <b>BearMaps (class project)</b><br/>
-                        Summer 2018<br/>
-                        BearMaps was developed for a computer science class at UC Berkeley. I developed a map rasterer
-                        using OpenStreetMaps to represent the city of Berkeley in a dynamic web app, used the same data
-                        to build a traversable graph, giving directions using the A* search algorithm, and used tries to
-                        autocomplete location searches, and k-d trees to search for nearest neighbor points.
-                        <br/><br/>
-                        <b>Gitlet (class project)</b><br/>
-                        Summer 2018<br/>
-                        Gitlet, developed for a computer science course (COMPSCI 61B), is a version control system
-                        modeled off of GitHub. It has a majority of the features that GitHub does and operates via
-                        terminal commands. Gitlet was written in Java with two project partners at UC Berkeley.
-                        <br/><br/>
-                        <b>Avalon AI (personal project)</b><br/>
-                        Fall 2018<br/>
-                        Avalon AI is a python-based computer system that plays a social deception game, called
-                        <a href="https://www.amazon.com/Resistance-Avalon-Social-Deduction-Game/dp/B009SAAV0C"
-                           target="_blank">Avalon</a>
-                        (this is an amazon.com link).
-                        It stores data in a SQL database and uses heuristics to deduce character roles (which is an
-                        essential part of the game). It uses pygame as a UI for entering data about game actions and
-                        game state.
-                        <br/><br/>
-                        <b>Dual Extrusion for Bioprinting (club project)</b><br/>
-                        Fall 2018<br/>
-                        "Dual Extrusion for Bioprinting" received a Jacobs Innovation Catalyst Spark Grant in the Fall
-                        of 2018. The goal of the project was to develop a modular dual extrusion head for bioprinting
-                        gels and cell materials. The head would be able to be mounted on a conventional 3D printer.
-                        Though still in progress, an initial prototype demonstrates two gels which can be extruded
-                        independently and in a controlled mix, while on the printer and controlled entirely using
-                        open-source slicing software.</code>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container-fluid" id="hobbies">
-    <br/><br/><br/>
-    <div class="row justify-content-center">
-        <div class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-            <figure class="figure">
-                <img src="assets/images/metal-piano.jpg" class="rounded border border-dark align-self-center img-fluid"
-                     alt="Metal piano model">
-                <figcaption class="figure-caption text-center">Metal piano model</figcaption>
-            </figure>
-
-        </div>
-        <div class="col col-sm col-md col-lg col-xl">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Hobbies</h5>
-                    <code style="color:black" class="card-text">
-                        My free time is always a time to learn, and to have fun while doing so!
-                        Whether it be in-person board games, photography, or stratetic games online, I'm always ready to
-                        have some fun!
-                        <br/><br/>
-                        <b>Board Games</b><br/>
-                        I'm always ready for a game of Risk, Monopoly, Avalon, chess, or the like! I'm always down for a
-                        game!
-                        <br/><br/>
-                        <b>Photography</b><br/>
-                        I love taking environmental photos with my DSLR, and am practicing candids and portraits.
-                        <br>
-                        Insta: @<a href="https://www.instagram.com/pngotos/" target="_blank">pngotos</a>
-                        <br/><br/>
-                        <b>Music</b><br/>
-                        I enjoy playing classical piano and theme songs from films I watch.
-                        <br/><br/>
-                        <b>Smash Ultimate, Valorant, League, Runeterra</b><br/>
-                        azureorbit#2604 :)
-                    </code>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid" id="experience">
-    <br/><br/><br/>
-    <div class="row justify-content-center">
-        <div class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-            <figure class="figure">
-                <img src="assets/images/chess.jpg" class="rounded border border-dark align-self-center img-fluid"
-                     alt="chess">
-                <figcaption class="figure-caption text-center">Chess</figcaption>
-            </figure>
-        </div>
-        <div class="col col-sm col-md col-lg col-xl">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Experience</h5>
-                    <code style="color:black" class="card-text">
-                        <b>Correlia Biosystems (2019-Present)</b>
-                        <br/>
-                        I participated in the
-                        <a href="https://qb3.berkeley.edu/intern/" target="_blank">QB3 Undergraduate Research Biotech Internship Program</a>
-                        in the summer of 2019.
-                        Through QB3, I met amazing mentors and friends at
-                        <a href="https://correliabio.com/" target="_blank">Correlia Biosystems</a>.
-                        At Correlia, I did software engineering work, developing code for internal and MVC use.
-                        I primarily worked on image analysis and data analysis, but also contributed to laboratory work.
-                        I'm continuing to work with Correlia as we launch our first instrument by the end of 2020!
-                        <br/><br/>
-                        <b>Amazon (May 2020 - October 2020)</b>
-                        <br/>
-                        I am excited to join the Amazon AWS team for a summer internship!
-                    </code>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container-fluid" id="contact">
-    <br/><br/><br/>
-    <div class="row justify-content-center">
-        <div class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-            <figure class="figure">
-                <img src="assets/images/contact.jpg" class="rounded border border-dark align-self-center img-fluid"
-                     alt="contact">
-                <figcaption class="figure-caption text-center">Contact</figcaption>
-            </figure>
-        </div>
-        <div class="col col-sm col-md col-lg col-xl">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Contact</h5>
-                    <code style="color:black" class="card-text">
-                        You can find me on github at
-                        <a href="https://github.com/ngopaul" target="_blank">github.com/ngopaul</a>.
-                        <br/><br/>
-                        Get in contact with me on LinkedIn:
-                        <a href="https://linkedin.com/in/apaulngo" target="_blank">linkedin.com/in/apaulngo</a>
-                        <br/><br/>
-                        To get in touch with me, please email <a
-                            href="mailto:paulngo123@gmail.com">paulngo123@gmail.com</a>.
-                    </code>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<br/><br/><br/><br/><br/><br/><br/>
-
-<footer class="fixed-bottom" style="background:black">
-    <div>
-        <code>Last updated May 1st, 2020</code>
-    </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
 </body>
+
 </html>
