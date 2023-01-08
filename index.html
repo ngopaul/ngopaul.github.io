@@ -12,49 +12,49 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/css/navbar-fixed-left.css">
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
+    <script src="assets/prism.js"></script>
 </head>
 
 <body style="background-color: #3c4041">
 <div class="wrapper">
     <!-- Sidebar  -->
-    <nav id="sidebar">
-<!--        <div style="height: 25%">-->
-<!--            <h3></h3>-->
-<!--        </div>-->
-
+    <nav id="sidebar" class="navbar fixed-left">
         <ul class="list-unstyled components">
             <li>
-                <h2><a href="https://www.linkedin.com/in/apaulngo/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></h2>
+                <h4><a href=""><i class="fas fa-home"></i> Home</a></h4>
             </li>
             <li>
-                <h2><a href="https://github.com/ngopaul/" target="_blank"><i class="fab fa-github"></i> Github</a></h2>
+                <h4><a href="https://www.linkedin.com/in/apaulngo/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></h4>
             </li>
             <li>
-                <h2><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></h2>
+                <h4><a href="https://github.com/ngopaul/" target="_blank"><i class="fab fa-github"></i> Github</a></h4>
             </li>
             <li>
-                <h2><a href="mailto:paulngo123@gmail.com"><i class="fas fa-envelope"></i> Email</a></h2>
+                <h4><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></h4>
             </li>
-        </ul>
-
-        <ul class="list-unstyled CTAs">
-
+            <li>
+                <h4><a href="mailto:paulngo123@gmail.com"><i class="fas fa-envelope"></i> Email</a></h4>
+            </li>
+            <li>
+                <h4>
+                    <a data-toggle="collapse" href="#notescollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fas fa-sticky-note"></i> Notes <i class="fas fa-angle-down"></i>
+                    </a>
+                </h4>
+            </li>
+            <li class="collapse" id="notescollapse">
+                <h5><a href="notes/stockfish_rpi.html">Stockfish on Raspberry Pi</a></h5>
+            </li>
         </ul>
     </nav>
 
     <!-- Page Content  -->
     <div id="content">
-
-        <button type="button" id="sidebarCollapse" class="btn btn-info" style="position: fixed; top: 5%; left: auto">
-            <i class="fas fa-align-left"></i>
-            <span></span>
-        </button>
-
-        <div style="height: 10%"></div>
-
         <div class="container-fluid" style="text-align: center">
             <img src="assets/images/my_face.jpg" class="rounded float-start" alt="Profile Picture" style="width: 30%; height: 30%">
             <br/><br/>
@@ -93,17 +93,7 @@
 <script src="assets/popper.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
-    });
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-</script>
+<script src="assets/script.js"></script>
 </body>
 
 </html>
