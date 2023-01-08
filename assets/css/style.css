@@ -60,15 +60,6 @@ a:focus {
     align-items: stretch;
 }
 
-#sidebar {
-    /*min-width: 25%;*/
-    /*max-width: 25%;*/
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
-    min-height: 100vh;
-}
-
 #sidebar.active {
     margin-left: -25%;
 }
@@ -89,8 +80,8 @@ a:focus {
 ----------------------------------------------------- */
 
 #content {
-    width: 100%;
-    padding: 20px;
+    width: 85vw;
+    padding: 2vw;
     min-height: 100vh;
     transition: all 0.3s;
 }
