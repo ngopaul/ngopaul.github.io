@@ -10,9 +10,8 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.png">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/scss/style.css">
 </head>
 
 <script>
@@ -111,7 +110,7 @@
                 </ul><li>To do:</li><ul>
                 <li>Read <a href="#file-riemann">Riemann (readings/RIEMANN - this should be opened with MS Word)</a> before class</li>
                 <li>Listen to <a href="#file-listening-1">Listening 1 (DMI/LISTENING 1)</a></li>
-                <li>Respond to <a href="#file-listening-1-desc">Listening 1.pdf (DMI/LISTENING 1/Listen.text.pdf)</a>, prepare response for class</li>
+                <li>Respond to <a href="#file-listening-1">Listening 1.pdf (DMI/LISTENING 1/Listen.text.pdf)</a>, prepare response for class</li>
                 <li>Read and do experiment in <a href="#file-shaping-time">Shaping Time (readings/SHAPING TIME.final.docx)</a>, assigned in class Tuesday</li>
                 <li>Read <a href="#file-intro-part-2">Intro to Part II (DMI/Intro to Part II-1.pdf)</a>, assigned in class Tuesday</li>
                 <li>Read <a href="#file-dmm-ch2">Chapter 2 of DMM (DMM/Chap 2. Children's Invented notations1.A Typology.doc)</a>, assigned in class Tuesday</li>
@@ -496,10 +495,10 @@
             </button></h5></div><div id="collapse9" class="collapse" aria-labelledby="file-intro-part-2" data-parent="#accordion"><div class="card-body" style="height:100vh">
             <iframe src="file/intro-part-2.pdf" width="100%" height="100%">This browser does not support PDFs.</iframe></div></div>
         </div>
-        <div class="card"><div class="card-header" id="file-listening-1-desc"><h5 class="mb-0">
+        <div class="card"><div class="card-header" id="file-listening-1"><h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
                 Listening 1 (DMI/LISTENING 1/Listen.text.pdf, DMI/LISTENING 1/) - scroll below for audio players
-            </button></h5></div><div id="collapse10" class="collapse" aria-labelledby="file-listening-1-desc" data-parent="#accordion"><div class="card-body">
+            </button></h5></div><div id="collapse10" class="collapse" aria-labelledby="file-listening-1" data-parent="#accordion"><div class="card-body">
             <div style="height:100vh">
                 <iframe src="file/listening-1-desc.pdf" width="100%" height="100%">This browser does not support PDFs.</iframe>
             </div>
@@ -575,15 +574,10 @@
     <p><a href="https://docs.google.com/spreadsheets/d/1WXTmUCmSldVmJHjlgKnu1Zo8YFmoRrdv-uZcIGy0FBY/edit#gid=0" target="_blank">Open in new tab</a></p>
 </div><br/>
 
-<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+<script src="../../assets/bootstrap/js/popper.min.js"></script>
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
 
 <script>
@@ -638,7 +632,7 @@
                         } else {
                             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
                             $target.focus(); // Set focus again
-                        };
+                        }
                     });
                 }
             }

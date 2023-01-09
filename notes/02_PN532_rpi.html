@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Paul's Notes</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../assets/scss/style.css">
+    <link rel="stylesheet" href="../assets/prism/css/prism.css">
+    <link rel="stylesheet" href="../assets/css/navbar-fixed-left.css">
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
+    <script src="../assets/prism/js/prism.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="navbar fixed-left">
+        <ul class="list-unstyled components">
+            <li>
+                <h4><a href="../">
+                    <div class="d-none d-lg-block"><i class="fas fa-home"></i> Home</div>
+                    <div class="d-lg-none"><i class="fas fa-home"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="https://www.linkedin.com/in/apaulngo/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fab fa-linkedin"></i> LinkedIn</div>
+                    <div class="d-lg-none"><i class="fab fa-linkedin"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="https://github.com/ngopaul/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fab fa-github"></i> Github</div>
+                    <div class="d-lg-none"><i class="fab fa-github"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fas fa-graduation-cap"></i> Google Scholar</div>
+                    <div class="d-lg-none"><i class="fas fa-graduation-cap"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="mailto:paulngo123@gmail.com">
+                    <div class="d-none d-lg-block"><i class="fas fa-envelope"></i> Email</div>
+                    <div class="d-lg-none"><i class="fas fa-envelope"></i></div>
+
+                </a></h4>
+            </li>
+            <li>
+                <h4>
+                    <a data-bs-toggle="collapse" href="#notescollapse" role="button" aria-expanded="true" aria-controls="collapseExample">
+                        <div class="d-none d-lg-block"><i class="fas fa-sticky-note"></i> Notes <i class="fas fa-angle-down"></i></div>
+                        <div class="d-lg-none"><i class="fas fa-sticky-note"></i> <i class="fas fa-angle-down"></i></div>
+                    </a>
+                </h4>
+            </li>
+            <div class="collapse show" id="notescollapse" style="padding-left: 1vw">
+                <li>
+                    <h6><a href="01_stockfish_rpi.html">
+                        <div class="d-none d-lg-block">Stockfish on Raspberry Pi</div>
+                        <div class="d-lg-none">1</div>
+                    </a></h6>
+                </li>
+                <li>
+                    <h6><a href="02_PN532_rpi.html">
+                        <div class="d-none d-lg-block">Using the PN532 on Raspberry Pi</div>
+                        <div class="d-lg-none">2</div>
+                    </a></h6>
+                </li>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" style="max-width: 80vw">
+        <div class="container-fluid" style="text-align: left">
+            <h1>Using the PN532 with the Raspberry Pi 3 Model B+ (Raspbian OS Lite)</h1>
+            <br/>
+            <p>Writing and reading NFC tags using the HiLetgo PN532 NFC NXP RFID Module on the Raspberry Pi 3 Model B+
+                (Raspbian OS Lite), using the I2C protocol.</p>
+            <h3>Required Components</h3>
+            <ul>
+                <li>
+                    HiLetgo PN532 Module<br/>
+                    <img src="../assets/images/pn532.jpg"
+                         class="img-thumbnail" style="max-height: 30vh; max-width: 75vw"
+                         alt="PN532 control board"
+                    >
+                </li>
+                <li>Writable NFC tags (a tag comes with the PN532 Module)</li>
+                <li>Raspberry Pi 3 Model B+ (Raspbian OS Lite)</li>
+                <li>Prototyping Wire (Female to Female 2.54mm Jumper Wires)</li>
+            </ul>
+            <p>
+                Connect the PN532 to the Raspberry Pi. GND should connect to GND, VCC connects to 5V, SDA connects to
+                GPIO 2 (Data), and SCL connects to GPIO 3 (Clock).
+                See <a href="https://pinout.xyz/pinout/i2c" target="_blank" class="link-primary">I2C at Raspberry Pi GPIO Pinout</a> for
+                more details.
+            </p>
+            <p>
+                Use <code>sudo raspi-config</code> to enable I2C. This is in Interface Options > I2C.
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi" data-output="3-11"><code class="language-shell">sudo apt-get install i2c-tools
+sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- 24 -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- -- </code></pre>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">sudo apt-get upgrade
+sudo apt-get install libusb-dev libnfc6 libnfc-bin libnfc-examples</code></pre>
+            <p>Edit <code>/etc/nfc/libnfc.conf</code> to have the following information:</p>
+            <pre><code class="language-bash"># Allow device auto-detection (default: true)
+# Note: if this auto-detection is disabled, user has to set manually a device
+# configuration using file or environment variable
+allow_autoscan = true
+
+# Allow intrusive auto-detection (default: false)
+# Warning: intrusive auto-detection can seriously disturb other devices
+# This option is not recommended, user should prefer to add manually his device.
+allow_intrusive_scan = false
+
+# Set log level (default: error)
+# Valid log levels are (in order of verbosity): 0 (none), 1 (error), 2 (info), 3 (debug)
+# Note: if you compiled with --enable-debug option, the default log level is "debug"
+log_level = 1
+
+# Manually set default device (no default)
+# To set a default device, you must set both name and connstring for your device
+# Note: if autoscan is enabled, default device will be the first device available in device list.
+#device.name = "microBuilder.eu"
+#device.connstring = "pn532_uart:/dev/ttyUSB0"
+device.name = "PN532_I2C"
+device.connstring = "pn532_i2c:/dev/i2c-1"</code></pre>
+            <p>
+                List the connected NFC reader information:
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi" data-output="2-8"><code class="language-shell">nfc-scan-device -v
+nfc-scan-device uses libnfc 1.8.0
+1 NFC device(s) found:
+- PN532_I2C:
+    pn532_i2c:/dev/i2c-1
+chip: PN532 v1.6
+initator mode modulations: ISO/IEC 14443A (424 kbps, 212 kbps, 106 kbps), FeliCa (424 kbps, 212 kbps), ISO/IEC 14443-4B (106 kbps), ISO/IEC 14443-4B' (106 kbps), ISO/IEC 14443-2B ST SRx (106 kbps), ISO/IEC 14443-2B ASK CTx (106 kbps), ISO/IEC 14443-2B-3B iClass (Picopass) (106 kbps), Innovision Jewel (106 kbps), Thinfilm NFC Barcode (106 kbps), D.E.P. (424 kbps, 212 kbps, 106 kbps)
+target mode modulations: ISO/IEC 14443A (424 kbps, 212 kbps, 106 kbps), FeliCa (424 kbps, 212 kbps), D.E.P. (424 kbps, 212 kbps, 106 kbps)</code></pre>
+        </div>
+        <hr/>
+    </div>
+</div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="../assets/bootstrap/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+
+</html>

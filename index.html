@@ -8,79 +8,122 @@
 
     <title>Paul Ngo</title>
 
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/prism/css/prism.css">
     <link rel="stylesheet" href="assets/css/navbar-fixed-left.css">
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
-    <script src="assets/prism.js"></script>
+    <script src="assets/prism/js/prism.js"></script>
 </head>
 
-<body style="background-color: #3c4041">
+<body>
 <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar" class="navbar fixed-left">
         <ul class="list-unstyled components">
             <li>
-                <h4><a href=""><i class="fas fa-home"></i> Home</a></h4>
+                <h4><a href="">
+                    <div class="d-none d-lg-block"><i class="fas fa-home"></i> Home</div>
+                    <div class="d-lg-none"><i class="fas fa-home"></i></div>
+                </a></h4>
             </li>
             <li>
-                <h4><a href="https://www.linkedin.com/in/apaulngo/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></h4>
+                <h4><a href="https://www.linkedin.com/in/apaulngo/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fab fa-linkedin"></i> LinkedIn</div>
+                    <div class="d-lg-none"><i class="fab fa-linkedin"></i></div>
+                </a></h4>
             </li>
             <li>
-                <h4><a href="https://github.com/ngopaul/" target="_blank"><i class="fab fa-github"></i> Github</a></h4>
+                <h4><a href="https://github.com/ngopaul/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fab fa-github"></i> Github</div>
+                    <div class="d-lg-none"><i class="fab fa-github"></i></div>
+                </a></h4>
             </li>
             <li>
-                <h4><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></h4>
+                <h4><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fas fa-graduation-cap"></i> Google Scholar</div>
+                    <div class="d-lg-none"><i class="fas fa-graduation-cap"></i></div>
+                </a></h4>
             </li>
             <li>
-                <h4><a href="mailto:paulngo123@gmail.com"><i class="fas fa-envelope"></i> Email</a></h4>
+                <h4><a href="mailto:paulngo123@gmail.com">
+                    <div class="d-none d-lg-block"><i class="fas fa-envelope"></i> Email</div>
+                    <div class="d-lg-none"><i class="fas fa-envelope"></i></div>
+
+                </a></h4>
             </li>
             <li>
                 <h4>
-                    <a data-toggle="collapse" href="#notescollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        <i class="fas fa-sticky-note"></i> Notes <i class="fas fa-angle-down"></i>
+                    <a data-bs-toggle="collapse" href="#notescollapse" role="button" aria-expanded="true" aria-controls="collapseExample">
+                        <div class="d-none d-lg-block"><i class="fas fa-sticky-note"></i> Notes <i class="fas fa-angle-down"></i></div>
+                        <div class="d-lg-none"><i class="fas fa-sticky-note"></i> <i class="fas fa-angle-down"></i></div>
                     </a>
                 </h4>
             </li>
-            <li class="collapse" id="notescollapse">
-                <h5><a href="notes/stockfish_rpi.html">Stockfish on Raspberry Pi</a></h5>
-            </li>
+            <div class="collapse show" id="notescollapse" style="padding-left: 1vw">
+                <li>
+                    <h6><a href="notes/01_stockfish_rpi.html">
+                        <div class="d-none d-md-block">Stockfish on Raspberry Pi</div>
+                        <div class="d-md-none">1</div>
+                    </a></h6>
+                </li>
+                <li>
+                    <h6><a href="notes/02_PN532_rpi.html">
+                        <div class="d-none d-md-block">Using the PN532 on Raspberry Pi</div>
+                        <div class="d-md-none">2</div>
+                    </a></h6>
+                </li>
+            </div>
         </ul>
     </nav>
 
     <!-- Page Content  -->
-    <div id="content">
-        <div class="container-fluid" style="text-align: center">
-            <img src="assets/images/my_face.jpg" class="rounded float-start" alt="Profile Picture" style="width: 30%; height: 30%">
-            <br/><br/>
-            <h1>Paul Ngo</h1>
+    <div id="content" style="max-width: 80vw">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <img src="assets/images/my_face.jpg" class="rounded float-start" alt="Profile Picture" style="max-height: 30vh; max-width: 75vw">
+                </div>
+            </div>
             <br/>
-            <h5>BS Electrical Engineering and Computer Science, BS Bioengineering, The University of California, Berkeley - 2021</h5>
-            <h5>MS Electrical Engineering and Computer Science, The University of California, Berkeley - 2022</h5>
-
-            <div class="container">
-                <div class="row">
-                    <div class="column">
-                        <p>I am a Masters student at UC Berkeley studying machine learning. I enjoy working on mechanical engineering,
-                            electrical engineering, and computer science projects. I enjoy making music, doing photography, and
-                            playing board games in my free time. </p>
-                    </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Paul Ngo</h1>
+                    <h5>BS Electrical Engineering and Computer Science, BS Bioengineering, The University of California, Berkeley - 2021</h5>
+                    <h5>MS Electrical Engineering and Computer Science, The University of California, Berkeley - 2022</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>I am a software engineer integrating biotech, automated liquid handlers, and computer science.
+                        I love engineering and computer science projects. I enjoy making music, taking photos, and
+                        playing board games in my free time. </p>
                 </div>
             </div>
         </div>
         <hr/>
-        <a href="https://dl.acm.org/doi/abs/10.1145/3459609.3460528" target="_blank">
-            <div id="research_item">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3459609.3460528" target="_blank" class="link-primary">
+            <div>
                 <p>
                     Lightweight LSTM for CAN Signal Decoding<br/>
                     Paul Ngo, Jonathan Sprinkle<br/>
-                    2021/5/18<br/>
+                    2021/05/18<br/>
                     Proceedings of the Workshop on Data-Driven and Intelligent Cyber-Physical Systems
+                </p>
+            </div>
+        </a>
+        <hr/>
+        <a href="http://dx.doi.org/10.55708/js0110002" target="_blank" class="link-primary">
+            <div>
+                <p>
+                    CANClassify: Automated Decoding and Labeling of CAN Bus Signals<br/>
+                    Paul Ngo, Jonathan Sprinkle, Rahul Bhadani<br/>
+                    2022/10/10<br/>
+                    Journal of Engineering Research and Sciences
                 </p>
             </div>
         </a>
@@ -90,10 +133,10 @@
 <!-- jQuery CDN - Slim version (=without AJAX) -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <!-- Popper.JS -->
-<script src="assets/popper.min.js"></script>
+<script src="assets/bootstrap/js/popper.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<script src="assets/script.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 
 </html>

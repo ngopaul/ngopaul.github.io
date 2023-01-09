@@ -1,15 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+//@import "../bootstrap/scss/functions";
+//@import "../bootstrap/scss/variables";
+//@import "../bootstrap/scss/mixins";
+
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
-
-h1 {
-    color: #cbcbcb
-}
-
-h5 {
-    color: #c8c8c8;
 }
 
 p {
@@ -17,7 +12,6 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #cacaca;
 }
 
 a,
@@ -30,7 +24,7 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    background: #ffffff;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -72,7 +66,7 @@ a:focus {
 
 #sidebar ul li a:hover {
     color: #7386D5;
-    background: #fff;
+    background: #ffffff;
 }
 
 /* ---------------------------------------------------
@@ -85,3 +79,47 @@ a:focus {
     min-height: 100vh;
     transition: all 0.3s;
 }
+
+//.dark {
+//
+//    $enable-gradients: true;
+//
+//    /* redefine theme colors for dark theme */
+//    $primary: #1b63e7;
+//    $secondary: #828a92;
+//    $info: #007898;
+//    $danger: #ff4b78;
+//    $success: #79d4a2;
+//    $dark: #d6dade;
+//    $light: #050607;
+//
+//
+//    $theme-colors: (
+//        "primary": $primary,
+//        "secondary": $secondary,
+//        "success": $success,
+//        "danger": $danger,
+//        "info": $info,
+//        "dark": $dark,
+//        "light": $light,
+//    );
+//
+//    /* redefine theme color variables */
+//    @each $color, $value in $theme-colors {
+//        --#{$variable-prefix}#{$color}: #{$value};
+//    }
+//
+//    $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+//
+//    @each $color, $value in $theme-colors-rgb {
+//        --#{$variable-prefix}#{$color}-rgb: #{$value};
+//    }
+//
+//    $body-color: #eeeeee;
+//    $body-bg: #000000;
+//
+//    --#{$variable-prefix}body-color: #{$body-color};
+//    --#{$variable-prefix}body-bg: #{$body-bg};
+//
+//    @import "../bootstrap/scss/bootstrap";
+//}
