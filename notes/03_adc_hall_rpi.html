@@ -6,27 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Paul Ngo</title>
+    <title>Paul's Notes</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="assets/scss/style.css">
-    <link rel="stylesheet" href="assets/prism/css/prism.css">
-    <link rel="stylesheet" href="assets/css/navbar-fixed-left.css">
+    <link rel="stylesheet" href="../assets/scss/style.css">
+    <link rel="stylesheet" href="../assets/prism/css/prism.css">
+    <link rel="stylesheet" href="../assets/css/navbar-fixed-left.css">
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
-    <script src="assets/prism/js/prism.js"></script>
+    <script src="../assets/prism/js/prism.js"></script>
 </head>
 
 <body>
 <div class="wrapper">
     <!-- Sidebar  -->
+
     <nav id="sidebar" class="navbar fixed-left">
         <ul class="list-unstyled components">
             <li>
-                <h4><a href="">
+                <h4><a href="../">
                     <div class="d-lg-none"><i class="fas fa-home"></i></div>
                     <div class="d-none d-lg-block"><i class="fas fa-home"></i> Home</div>
                 </a></h4>
@@ -66,8 +67,8 @@
             </li>
             <li>
                 <h4><a href="https://orcid.org/0000-0003-0187-3551" target="_blank">
-                    <div class="d-lg-none d-inline"><img src="assets/images/ORCIDiD_icon16x16.png" alt="ORCID iD icon"/></div>
-                    <div class="d-none d-lg-block d-inline"><img src="assets/images/ORCIDiD_icon16x16.png" alt="ORCID iD icon"/> ORCID
+                    <div class="d-lg-none d-inline"><img src="../assets/images/ORCIDiD_icon16x16.png" alt="ORCID iD icon"/></div>
+                    <div class="d-none d-lg-block d-inline"><img src="../assets/images/ORCIDiD_icon16x16.png" alt="ORCID iD icon"/> ORCID
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
@@ -96,21 +97,21 @@
             </li>
             <div class="collapse show" id="notescollapse" style="padding-left: 1vw">
                 <li>
-                    <h6><a href="notes/01_stockfish_rpi.html">
+                    <h6><a href="./01_stockfish_rpi.html">
                         <div class="d-none d-md-block">Stockfish on Raspberry Pi</div>
                         <div class="d-md-none">1</div>
                     </a></h6>
                 </li>
                 <li>
-                    <h6><a href="notes/02_PN532_rpi.html">
+                    <h6><a href="./02_PN532_rpi.html">
                         <div class="d-none d-md-block">Using the PN532 on Raspberry Pi</div>
                         <div class="d-md-none">2</div>
                     </a></h6>
                 </li>
                 <li>
-                    <h6><a href="notes/03_adc_hall_rpi.html">
+                    <h6><a href="./03_adc_hall_rpi.html">
                         <div class="d-none d-md-block">MCP3008 ADC + Raspberry Pi</div>
-                        <div class="d-md-none">2</div>
+                        <div class="d-md-none">3</div>
                     </a></h6>
                 </li>
             </div>
@@ -119,85 +120,85 @@
 
     <!-- Page Content  -->
     <div id="content" style="max-width: 80vw">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="assets/images/my_face.jpg" class="rounded float-start" alt="Profile Picture" style="max-height: 30vh; max-width: 75vw">
-                </div>
-            </div>
+        <div class="container-fluid" style="text-align: left">
+            <h1>Using the MCP3008 ADC with the Raspberry Pi to Detect Magnetic Fields</h1>
+            <p>Using the MCP3008 with the Raspberry Pi over SPI to detect Magnetic Fields using the OH49E Hall Effect
+            Sensor</p>
+            <h3>Required Components</h3>
+            <ul>
+                <li>MCP3008 ADC</li>
+                <li>OH49E Hall Effect Sensor</li>
+                <li>Raspberry Pi</li>
+            </ul>
+            <h3>Steps</h3>
+            <p>
+                Connect the MCP3008 ADC to the Raspberry Pi as in
+                <a href="https://learn.adafruit.com/mcp3008-spi-adc/python-circuitpython" class="link-primary" target="_blank">
+                    adafruit's walkthrough
+                </a>. Do not add any potentiometer.
+            </p>
+            <p>
+                Install required libraries. Ensure that the OS upgrade succeeds before continuing with further commands.
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3-pip
+sudo pip3 install --upgrade setuptools
+cd ~
+sudo pip3 install --upgrade adafruit-python-shell
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+sudo python3 raspi-blinka.py</code></pre>
+            <p>
+                Install MCP 3008 library. Do not replace the xxx with your version of the MCP.
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">sudo pip3 install adafruit-circuitpython-mcp3xxx</code></pre>
+            <p>
+                Check that SPI is enabled:
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi" data-output="2"><code class="language-shell">ls /dev/spi*
+/dev/spidev0.0 /dev/spidev0.1</code></pre>
+            <p>
+                Run the following in python, and then you can press enter each time you want to read the voltage value
+                from the ADC. With no magnet next to the Hall Effect sensor, the ADC should read around 2.5V.
+                Placing the magnet close to the Hall Effect sensor results in a dramatic deviation from the
+                2.5V midpoint that the sensor output (lower or higher depends on the direction of applied magnetic
+                field).
+            </p>
+            <pre><code class="language-python">import busio
+import digitalio
+import board
+import adafruit_mcp3xxx.mcp3008 as MCP
+from adafruit_mcp3xxx.analog_in import AnalogIn
+spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
+cs = digitalio.DigitalInOut(board.D5)
+mcp = MCP.MCP3008(spi, cs)
+channel = AnalogIn(mcp, MCP.P0)
+while 1:
+    _ = input("")
+    print('ADC Voltage: ' + str(channel.voltage) + 'V')</code></pre>
+
             <br/>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1>Paul Ngo</h1>
-                    <h5>BS Electrical Engineering and Computer Science, BS Bioengineering, The University of California, Berkeley - 2021</h5>
-                    <h5>MS Electrical Engineering and Computer Science, The University of California, Berkeley - 2022</h5>
-                </div>
-            </div>
-            <br/>
-            <div class="row">
-                <div class="col-12">
-                    <p>I am a software engineer working at the intersection of biotech, robotic automation,
-                        and computer science.
-                        I love engineering and computer science projects. I enjoy making music, taking photos, and
-                        playing board games in my free time. </p>
-                </div>
-            </div>
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://learn.adafruit.com/mcp3008-spi-adc/python-circuitpython" class="link-primary" target="_blank">
+                    Python &#38; CircuitPython | MCP3008 - 8-Channel 10-Bit ADC With SPI Interface
+                </a></li>
+                <li><a href="https://pinout.xyz/pinout/spi" class="link-primary" target="_blank">
+                    Raspberry Pi Pinout: SPI by @Gagetoid
+                </a></li>
+            </ul>
         </div>
         <hr/>
-        <a href="https://dl.acm.org/doi/abs/10.1145/3459609.3460528" target="_blank" class="link-primary">
-            <div>
-                <p>
-                    Lightweight LSTM for CAN Signal Decoding
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                    </svg><br/>
-                    Paul Ngo, Jonathan Sprinkle<br/>
-                    2021/05/18<br/>
-                    DI-CPS'21: Proceedings of the Workshop on Data-Driven and Intelligent Cyber-Physical Systems
-                </p>
-            </div>
-        </a>
-        <hr/>
-        <a href="http://dx.doi.org/10.55708/js0110002" target="_blank" class="link-primary">
-            <div>
-                <p>
-                    CANClassify: Automated Decoding and Labeling of CAN Bus Signals
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                    </svg><br/>
-                    Paul Ngo, Jonathan Sprinkle, Rahul Bhadani<br/>
-                    2022/10/10<br/>
-                    Journal of Engineering Research and Sciences
-                </p>
-            </div>
-        </a>
-        <hr/>
-        <a href="https://dl.acm.org/doi/10.1145/3576841.3589622" target="_blank" class="link-primary">
-            <div>
-                <p>
-                    Parameter Estimation for Decoding Sensor Signals
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                    </svg><br/>
-                    Matthew Nice, Matthew Bunting, Gergely Zachar, Rahul Bhadani, Paul Ngo, Jonathan Lee, Alexandre Bayen, Dan Work, Jonathan Sprinkle<br/>
-                    2023/05/09<br/>
-                    ICCPS '23: Proceedings of the ACM/IEEE 14th International Conference on Cyber-Physical Systems
-                </p>
-            </div>
-        </a>
     </div>
 </div>
 
 <!-- jQuery CDN - Slim version (=without AJAX) -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <!-- Popper.JS -->
-<script src="assets/bootstrap/js/popper.min.js"></script>
+<script src="../assets/bootstrap/js/popper.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/script.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/script.js"></script>
 </body>
 
 </html>

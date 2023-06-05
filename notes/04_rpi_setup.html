@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Paul's Notes</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../assets/scss/style.css">
+    <link rel="stylesheet" href="../assets/prism/css/prism.css">
+    <link rel="stylesheet" href="../assets/css/navbar-fixed-left.css">
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
+    <script src="../assets/prism/js/prism.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="navbar fixed-left">
+        <ul class="list-unstyled components">
+            <li>
+                <h4><a href="../">
+                    <div class="d-none d-lg-block"><i class="fas fa-home"></i> Home</div>
+                    <div class="d-lg-none"><i class="fas fa-home"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="https://www.linkedin.com/in/apaulngo/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fab fa-linkedin"></i> LinkedIn</div>
+                    <div class="d-lg-none"><i class="fab fa-linkedin"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="https://github.com/ngopaul/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fab fa-github"></i> Github</div>
+                    <div class="d-lg-none"><i class="fab fa-github"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank">
+                    <div class="d-none d-lg-block"><i class="fas fa-graduation-cap"></i> Google Scholar</div>
+                    <div class="d-lg-none"><i class="fas fa-graduation-cap"></i></div>
+                </a></h4>
+            </li>
+            <li>
+                <h4><a href="mailto:paulngo123@gmail.com">
+                    <div class="d-none d-lg-block"><i class="fas fa-envelope"></i> Email</div>
+                    <div class="d-lg-none"><i class="fas fa-envelope"></i></div>
+
+                </a></h4>
+            </li>
+            <li>
+                <h4>
+                    <a data-bs-toggle="collapse" href="#notescollapse" role="button" aria-expanded="true" aria-controls="collapseExample">
+                        <div class="d-none d-lg-block"><i class="fas fa-sticky-note"></i> Notes <i class="fas fa-angle-down"></i></div>
+                        <div class="d-lg-none"><i class="fas fa-sticky-note"></i> <i class="fas fa-angle-down"></i></div>
+                    </a>
+                </h4>
+            </li>
+            <div class="collapse show" id="notescollapse" style="padding-left: 1vw">
+                <li>
+                    <h6><a href="01_stockfish_rpi.html">
+                        <div class="d-none d-lg-block">Stockfish on Raspberry Pi</div>
+                        <div class="d-lg-none">1</div>
+                    </a></h6>
+                </li>
+                <li>
+                    <h6><a href="02_PN532_rpi.html">
+                        <div class="d-none d-lg-block">Using the PN532 on Raspberry Pi</div>
+                        <div class="d-lg-none">2</div>
+                    </a></h6>
+                </li>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" style="max-width: 80vw">
+        <div class="container-fluid" style="text-align: left">
+            <h1>Raspberry Pi Setup for Development</h1>
+            <p>Setting up SSH, I2C, SPI, Python, etc. on the Raspberry Pi on first time use</p>
+            <h3>Required Components</h3>
+            <ul>
+                <li>Raspberry Pi</li>
+            </ul>
+            <h3>Steps</h3>
+            <p>
+                First time setup. use <code>sudo raspi-config</code> to set up time zone, enable I2C, SPI, SSH, and wifi.
+            </p>
+            <p>
+                Follow the prompts in order to set up the raspberry pi keyboard layout, username, and password.
+            </p>
+            <p>
+                Sign in, then Set up WiFi by going to System Options > Wireless LAN
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">sudo raspi-config
+</code></pre>
+            <p>
+                In raspi-config, go to Interface Options, and enable SSH, SPI, and I2C. Then reboot. After logging back
+                in, upgrade the OS:
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">sudo apt-get update
+sudo apt-get upgrade</code></pre>
+            <p>
+                If that fails, then run the following:
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">sudo apt-get install -f
+sudo reboot
+sudo apt-get update
+sudo apt-get upgrade
+sudo reboot</code></pre>
+            <p>
+                Install python-related libraries
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">
+sudo apt-get install python3-pip
+sudo pip3 install --upgrade setuptools</code></pre>
+            <p>
+                Install adafruit libraries for development
+            </p>
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">cd ~
+sudo pip3 install --upgrade adafruit-python-shell
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+sudo python3 raspi-blinka.py</code></pre>
+            <br/>
+            <h3>References</h3>
+            <ul>
+                <li><a href="https://learn.adafruit.com/mcp3008-spi-adc/python-circuitpython" class="link-primary" target="_blank">
+                    Python &#38; CircuitPython | MCP3008 - 8-Channel 10-Bit ADC With SPI Interface
+                </a></li>
+                <li><a href="https://pinout.xyz/pinout/spi" class="link-primary" target="_blank">
+                    Raspberry Pi Pinout: SPI by @Gagetoid
+                </a></li>
+            </ul>
+        </div>
+        <hr/>
+    </div>
+</div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="../assets/bootstrap/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+
+</html>
