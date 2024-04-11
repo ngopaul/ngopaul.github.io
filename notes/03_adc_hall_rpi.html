@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Paul's Notes</title>
+    <title>Using the MCP3008 ADC with the Raspberry Pi to Detect Magnetic Fields</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
@@ -16,107 +16,14 @@
     <link rel="stylesheet" href="../assets/css/navbar-fixed-left.css">
 
     <!-- Font Awesome JS -->
-    <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/965bb74516.js" crossorigin="anonymous"></script>
     <script src="../assets/prism/js/prism.js"></script>
 </head>
 
 <body>
 <div class="wrapper">
     <!-- Sidebar  -->
-
-    <nav id="sidebar" class="navbar fixed-left">
-        <ul class="list-unstyled components">
-            <li>
-                <h4><a href="../">
-                    <div class="d-lg-none"><i class="fas fa-home"></i></div>
-                    <div class="d-none d-lg-block"><i class="fas fa-home"></i> Home</div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="https://www.linkedin.com/in/apaulngo/" target="_blank">
-                    <div class="d-lg-none"><i class="fab fa-linkedin"></i></div>
-                    <div class="d-none d-lg-block"><i class="fab fa-linkedin"></i> LinkedIn
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                    </div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="https://github.com/ngopaul/" target="_blank">
-                    <div class="d-lg-none"><i class="fab fa-github"></i></div>
-                    <div class="d-none d-lg-block"><i class="fab fa-github"></i> Github
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                    </div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank">
-                    <div class="d-lg-none d-inline"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="d-none d-lg-block d-inline"><i class="fas fa-graduation-cap"></i> Scholar
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                    </div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="https://orcid.org/0000-0003-0187-3551" target="_blank">
-                    <div class="d-lg-none d-inline"><img src="../assets/images/ORCIDiD_icon16x16.png" alt="ORCID iD icon"/></div>
-                    <div class="d-none d-lg-block d-inline"><img src="../assets/images/ORCIDiD_icon16x16.png" alt="ORCID iD icon"/> ORCID
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                        </svg>
-                    </div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="mailto:paulngo123@gmail.com">
-                    <div class="d-lg-none"><i class="fas fa-envelope"></i></div>
-                    <div class="d-none d-lg-block"><i class="fas fa-envelope"></i> Email
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
-                            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-                            <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
-                        </svg>
-                    </div>
-                </a></h4>
-            </li>
-            <li>
-                <h4>
-                    <a data-bs-toggle="collapse" href="#notescollapse" role="button" aria-expanded="true" aria-controls="collapseExample">
-                        <div class="d-none d-lg-block"><i class="fas fa-sticky-note"></i> Notes <i class="fas fa-angle-down"></i></div>
-                        <div class="d-lg-none"><i class="fas fa-sticky-note"></i> <i class="fas fa-angle-down"></i></div>
-                    </a>
-                </h4>
-            </li>
-            <div class="collapse show" id="notescollapse" style="padding-left: 1vw">
-                <li>
-                    <h6><a href="./01_stockfish_rpi.html">
-                        <div class="d-none d-md-block">Stockfish on Raspberry Pi</div>
-                        <div class="d-md-none">1</div>
-                    </a></h6>
-                </li>
-                <li>
-                    <h6><a href="./02_PN532_rpi.html">
-                        <div class="d-none d-md-block">Using the PN532 on Raspberry Pi</div>
-                        <div class="d-md-none">2</div>
-                    </a></h6>
-                </li>
-                <li>
-                    <h6><a href="./03_adc_hall_rpi.html">
-                        <div class="d-none d-md-block">MCP3008 ADC + Raspberry Pi</div>
-                        <div class="d-md-none">3</div>
-                    </a></h6>
-                </li>
-            </div>
-        </ul>
-    </nav>
+    <div id="navbar-loader"></div>
 
     <!-- Page Content  -->
     <div id="content" style="max-width: 80vw">
@@ -193,12 +100,14 @@ while 1:
 </div>
 
 <!-- jQuery CDN - Slim version (=without AJAX) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="../assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <!-- Popper.JS -->
 <script src="../assets/bootstrap/js/popper.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="../assets/js/script.js"></script>
+<script src="../assets/js/navbar_loader.js"></script>
+<script>window.onload = function () { loadNavbar(1); };</script>
 </body>
 
 </html>

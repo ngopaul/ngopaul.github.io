@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <title>Japanese - the -te form</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Our Custom CSS -->
+    <link href="../assets/scss/style.css" rel="stylesheet">
+    <link href="../assets/prism/css/prism.css" rel="stylesheet">
+    <link href="../assets/css/navbar-fixed-left.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!-- custom script -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- Font Awesome JS -->
+    <script crossorigin="anonymous" src="../assets/js/965bb74516.js"></script>
+    <script src="../assets/prism/js/prism.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div id="navbar-loader"></div>
+
+        <!-- Page Content  -->
+        <div id="content" style="max-width: 80vw">
+            <div class="container-fluid" style="text-align: left">
+                <h1>Japanese: The -te form</h1>
+                <p>Walkthrough of the -te form for verbs, notes from 2024-04-08</p>
+                <h3>Usage</h3>
+                <p>There are many uses for the -te form. Here are a few:</p>
+                <ul>
+                    <li>
+                        Connecting verbs
+                        <ul><li>The "te" form can be used to connect verbs in a sentence to indicate simultaneous or sequential
+                            actions, events, or states. For example, "hachi-ji ni okite gakkou ni itta" (八時に起きて学校に行った)
+                            translates to "I got up at eight and went to school".</li></ul>
+                    </li>
+                    <li>
+                        Speaking in the present progressive
+                        <ul><li>
+                            The "te" form can be used to speak in the present progressive.
+                            For example, "matte kudasai" (待ってください) translates to "please wait".
+                        </li></ul>
+                    </li>
+                    <li>
+                        Asking for permission
+                        <ul><li>
+                            The "te" form can be used to ask for permission.
+                            For example, "matte moraemasu ka?" (待ってもらえますか?) translates to "can I get you to wait?".
+                        </li></ul>
+                    </li>
+                    <li>
+                        Indicate a completed action
+                        <ul><li>
+                            The "te" form can be used to indicate a completed action, often translated as "have done" or "did".
+                            For example, "matte" (待って) is the "-te" form of the verb "matsu" (待つ) which means "wait".
+                        </li></ul>
+                    </li>
+                    <li>
+                        Combining adjectives and nouns
+                        <ul><li>
+                            The "te" form can be used to combine adjectives and nouns.
+                            For example, the "te" form of an "い" adjective is formed by substituting "くて" for the final "い".
+                        </li></ul>
+                    </li>
+                    <li>
+                        Requesting people to do things
+                        <ul><li>
+                            The "te" form can be used with the verb kudasai (ください) to request people to do things.
+                        </li></ul>
+                    </li>
+                </ul>
+                <h3>Two Main Verbs</h3>
+                <p>There are two main verbs in Japanese: <b>u verbs</b> and <b>ru verbs</b>. The -te form is different for
+                    each type of verb. There are also some irregular verbs which conjugate differently.</p>
+                <h3>ru (る) Verbs</h3>
+                <p>To conjugate a ru verb to the -te form, drop the ru (る) ending and add the -te (て) ending.</p>
+                <p>For example, taberu (食べる), to eat, becomes:</p>
+                <div class="input-container">
+                    <input id="q1" onsubmit="checkAnswer(1)" placeholder="Enter your answer" type="text" data-answer="tabete">
+                    <button id="q1-show-answer" onclick="showAnswer(1)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q1-status"></span>
+                <p id="a1" style="display: none">tabete (食べて)</p>
+
+                <h3>u (う) Verbs</h3>
+                <p>There are many types of u verbs. They can be categorized into four categories.</p>
+                <h4>1. su (す) verbs</h4>
+                <p>To conjugate a su (す) verb to the -te form, remove the su (す) ending and add -shite (して).</p>
+                <p>For example, hanasu (話す), to speak, becomes:</p>
+                <div class="input-container">
+                    <input id="q2" onsubmit="checkAnswer(2)" placeholder="Enter your answer" type="text" data-answer="hanashite">
+                    <button id="q2-show-answer" onclick="showAnswer(2)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q2-status"></span>
+                <p id="a2" style="display: none">hanashite (話して)</p>
+                <h4>2. ku (く) and gu (ぐ) verbs</h4>
+                <p>To conjugate ku (く) and gu (ぐ) verbs to the -te form, remove the ku/gu (く/ぐ) ending and add -ite (いて)
+                    or -ide (いで).</p>
+                <p>For example, kaku (書く), to write, becomes:</p>
+                <div class="input-container">
+                    <input id="q3" onsubmit="checkAnswer(3)" placeholder="Enter your answer" type="text" data-answer="kaite">
+                    <button id="q3-show-answer" onclick="showAnswer(3)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q3-status"></span>
+                <p id="a3" style="display: none">kaite (書いて)</p>
+                <h4>3. mu (む), nu (ぬ) and bu (ぶ) verbs</h4>
+                <p>To conjugate mu, nu and bu verbs to the -te form, remove the mu/nu/bu ending and add -nde (んで).</p>
+                <p>For example, nomu (飲む), to drink, becomes:</p>
+                <div class="input-container">
+                    <input id="q4" onsubmit="checkAnswer(4)" placeholder="Enter your answer" type="text"
+                           data-answer="nonde">
+                    <button id="q4-show-answer" onclick="showAnswer(4)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q4-status"></span>
+                <p id="a4" style="display: none">nonde (飲んで)</p>
+                <h4>4. u (う), tsu (つ) and some ru (う) verbs</h4>
+                <p>To conjugate purely u ("wu"), tsu, and some special ru verbs to the -te form, remove the u/tsu/ru
+                    ending and add -tte (って).</p>
+                <p>For example, kuu (食う), to eat, becomes:</p>
+                <div class="input-container">
+                    <input id="q5" onsubmit="checkAnswer(5)" placeholder="Enter your answer" type="text" data-answer="kutte">
+                    <button id="q5-show-answer" onclick="showAnswer(5)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q5-status"></span>
+                <p id="a5" style="display: none">kutte (食って)</p>
+                <h3>Irregular Verbs</h3>
+                <p>There are a few irregular verbs that conjugate differently. Here are a few:</p>
+                <h4>suru (する), to do</h4>
+                <p>suru (する) becomes:</p>
+                <div class="input-container">
+                    <input id="q6" onsubmit="checkAnswer(6)" placeholder="Enter your answer" type="text" data-answer="shite">
+                    <button id="q6-show-answer" onclick="showAnswer(6)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q6-status"></span>
+                <p id="a6" style="display: none">shite (して)</p>
+                <h4>kuru (来る), to come</h4>
+                <p>kuru (来る) becomes:</p>
+                <div class="input-container">
+                    <input id="q7" onsubmit="checkAnswer(7)" placeholder="Enter your answer" type="text" data-answer="kite">
+                    <button id="q7-show-answer" onclick="showAnswer(7)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q7-status"></span>
+                <p id="a7" style="display: none">kite (来て)</p>
+                <h4>iku (行く), to go</h4>
+                <p>iku (行く) becomes:</p>
+                <div class="input-container">
+                    <input id="q8" onsubmit="checkAnswer(8)" placeholder="Enter your answer" type="text" data-answer="itte">
+                    <button id="q8-show-answer" onclick="showAnswer(8)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q8-status"></span>
+                <p id="a8" style="display: none">itte (行って)</p>
+
+                <h3>Additional Endings</h3>
+                <p>In practice, additional endings are added to the -te form to express different meanings. Here are a few:</p>
+                <h4>-kudasai (ください)</h4>
+                <p>-kudasai (ください) is added to the -te form to make a polite request.</p>
+                <p>For example, taberu (食べる) becomes:</p>
+                <div class="input-container">
+                    <input id="q9" onsubmit="checkAnswer(9)" placeholder="Enter your answer" type="text" data-answer="tabetekudasai">
+                    <button id="q9-show-answer" onclick="showAnswer(9)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q9-status"></span>
+                <p id="a9" style="display: none">tabete kudasai (食べてください)</p>
+
+                <h4>-iru (いる) and -aru (ある)</h4>
+                <p>-iru (いる) and -aru (ある) are added to the -te form to <i>casually</i> express actions that are in progress.</p>
+                <p>For example, hanasu (話す) becomes:</p>
+                <div class="input-container">
+                    <input id="q10" onsubmit="checkAnswer(10)" placeholder="Enter your answer" type="text" data-answer="hanashiteiru">
+                    <button id="q10-show-answer" onclick="showAnswer(10)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q10-status"></span>
+                <p id="a10" style="display: none">hanashite iru (話している)</p>
+
+                <h4>-imasu (います) and -arimasu (あります)</h4>
+                <p>-imasu (います) and -arimasu (あります) are added to the -te form to <i>politely</i> express actions that are in progress.</p>
+                <p>For example, oyogu (泳ぐ), to swim, becomes:</p>
+                <div class="input-container">
+                    <input id="q11" onsubmit="checkAnswer(11)" placeholder="Enter your answer" type="text" data-answer="oyoideimasu">
+                    <button id="q11-show-answer" onclick="showAnswer(11)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q11-status"></span>
+                <p id="a11" style="display: none">oyoide imasu (泳いでいます)</p>
+
+                <h4>-inai (いない)</h4>
+                <p>-inai (いない) is added to the -te form to express actions that are not in progress.</p>
+                <p>For example, nomu (飲む) becomes:</p>
+                <div class="input-container">
+                    <input id="q12" onsubmit="checkAnswer(12)" placeholder="Enter your answer" type="text" data-answer="nondeinai">
+                    <button id="q12-show-answer" onclick="showAnswer(12)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q12-status"></span>
+                <p id="a12" style="display: none">nonde inai (飲んでいない)</p>
+
+                <h4>-moiidesuka (もいいですか)</h4>
+                <p>-moiidesuka (もいいですか) is added to the -te form to ask for permission.</p>
+                <p>For example, kuu (食う) becomes:</p>
+                <div class="input-container">
+                    <input id="q13" onsubmit="checkAnswer(13)" placeholder="Enter your answer" type="text" data-answer="kuttemoiidesuka">
+                    <button id="q13-show-answer" onclick="showAnswer(13)" class="m-2">Show Answer</button>
+                </div>
+                <span class="icon" id="q13-status"></span>
+                <p id="a13" style="display: none">kutte moiidesuka (食ってもいいですか)</p>
+
+                <br/>
+                <h3>Other Notes</h3>
+                Mixing Japanese and English, you can verb-ize an English word by adding -suru (する) to the English word.
+                For example, "to email" becomes e-mail suru (イーメールする).
+            </div>
+            <hr/>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="../assets/js/jquery-3.2.1.slim.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="../assets/bootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/navbar_loader.js"></script>
+    <script>window.onload = function () {
+      loadNavbar(1);
+    };</script>
+    <script>
+      function setupKeyupListeners(elementPrefix, start, end) {
+        for (let i = start; i <= end; i++) {
+          const elementId = `${elementPrefix}${i}`;
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.addEventListener("keyup", function(event) {
+              if (event.key === "Enter") {
+                checkAnswer(i);
+              }
+            });
+          }
+        }
+      }
+
+      // Call this function with the prefix of your element IDs and the range you want.
+      setupKeyupListeners("q", 1, 13); // This will set up listeners for q1 to q10.
+    </script>
+</body>
+
+</html>

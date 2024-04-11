@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Paul's Notes</title>
+    <title>Raspberry Pi Setup for Development</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
@@ -16,70 +16,14 @@
     <link rel="stylesheet" href="../assets/css/navbar-fixed-left.css">
 
     <!-- Font Awesome JS -->
-    <script src="https://kit.fontawesome.com/965bb74516.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/965bb74516.js" crossorigin="anonymous"></script>
     <script src="../assets/prism/js/prism.js"></script>
 </head>
 
 <body>
 <div class="wrapper">
     <!-- Sidebar  -->
-    <nav id="sidebar" class="navbar fixed-left">
-        <ul class="list-unstyled components">
-            <li>
-                <h4><a href="../">
-                    <div class="d-none d-lg-block"><i class="fas fa-home"></i> Home</div>
-                    <div class="d-lg-none"><i class="fas fa-home"></i></div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="https://www.linkedin.com/in/apaulngo/" target="_blank">
-                    <div class="d-none d-lg-block"><i class="fab fa-linkedin"></i> LinkedIn</div>
-                    <div class="d-lg-none"><i class="fab fa-linkedin"></i></div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="https://github.com/ngopaul/" target="_blank">
-                    <div class="d-none d-lg-block"><i class="fab fa-github"></i> Github</div>
-                    <div class="d-lg-none"><i class="fab fa-github"></i></div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="https://scholar.google.com/citations?user=9woxtpEAAAAJ/" target="_blank">
-                    <div class="d-none d-lg-block"><i class="fas fa-graduation-cap"></i> Google Scholar</div>
-                    <div class="d-lg-none"><i class="fas fa-graduation-cap"></i></div>
-                </a></h4>
-            </li>
-            <li>
-                <h4><a href="mailto:paulngo123@gmail.com">
-                    <div class="d-none d-lg-block"><i class="fas fa-envelope"></i> Email</div>
-                    <div class="d-lg-none"><i class="fas fa-envelope"></i></div>
-
-                </a></h4>
-            </li>
-            <li>
-                <h4>
-                    <a data-bs-toggle="collapse" href="#notescollapse" role="button" aria-expanded="true" aria-controls="collapseExample">
-                        <div class="d-none d-lg-block"><i class="fas fa-sticky-note"></i> Notes <i class="fas fa-angle-down"></i></div>
-                        <div class="d-lg-none"><i class="fas fa-sticky-note"></i> <i class="fas fa-angle-down"></i></div>
-                    </a>
-                </h4>
-            </li>
-            <div class="collapse show" id="notescollapse" style="padding-left: 1vw">
-                <li>
-                    <h6><a href="01_stockfish_rpi.html">
-                        <div class="d-none d-lg-block">Stockfish on Raspberry Pi</div>
-                        <div class="d-lg-none">1</div>
-                    </a></h6>
-                </li>
-                <li>
-                    <h6><a href="02_PN532_rpi.html">
-                        <div class="d-none d-lg-block">Using the PN532 on Raspberry Pi</div>
-                        <div class="d-lg-none">2</div>
-                    </a></h6>
-                </li>
-            </div>
-        </ul>
-    </nav>
+    <div id="navbar-loader"></div>
 
     <!-- Page Content  -->
     <div id="content" style="max-width: 80vw">
@@ -119,8 +63,7 @@ sudo reboot</code></pre>
             <p>
                 Install python-related libraries
             </p>
-            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">
-sudo apt-get install python3-pip
+            <pre class="command-line" data-user="YOUR_USER" data-host="raspberrypi"><code class="language-shell">sudo apt-get install python3-pip
 sudo pip3 install --upgrade setuptools</code></pre>
             <p>
                 Install adafruit libraries for development
@@ -145,12 +88,14 @@ sudo python3 raspi-blinka.py</code></pre>
 </div>
 
 <!-- jQuery CDN - Slim version (=without AJAX) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="../assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <!-- Popper.JS -->
 <script src="../assets/bootstrap/js/popper.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="../assets/js/script.js"></script>
+<script src="../assets/js/navbar_loader.js"></script>
+<script>window.onload = function () { loadNavbar(1); };</script>
 </body>
 
 </html>
