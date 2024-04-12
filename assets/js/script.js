@@ -15,7 +15,7 @@ function checkAnswer(question_number) {
   const question_status_element = document.getElementById('q' + question_number + '-status');
   const user_answer = question_element.value;
   // if the answer is correct, then show the answer_element and update the status to a green checkmark
-  if (user_answer === question_element.dataset.answer) {
+  if (user_answer.toLowerCase() === question_element.dataset.answer) {
     answer_element.style.display = 'block';
     question_status_element.innerText = 'Correct!';
   } else {
