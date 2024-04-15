@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Plover dictionary lookup tool</title>
+    <script type="text/javascript" src="difflib-browser.js"></script>
+    <script type="text/javascript" src="do.js"></script>
+    <style type="text/css">
+        #search {
+            width: 100%
+        }
+
+        #result {
+            width: 100%;
+            border-spacing: 0;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 2px;
+            padding-bottom: 0;
+        }
+
+        td table {
+            display: inline-block;
+        }
+
+        td td {
+            text-align: center;
+            padding: 0;
+            border: 0;
+        }
+
+        td tr + tr td {
+            font-size: 80%;
+            line-height: 70%;
+        }
+
+        #search {
+            display: none
+        }
+    </style>
+</head>
+<body>
+<p>
+    <input id="search" autofocus="true" autocomplete="off" size="15"/>
+</p>
+<!--<p id="time_taken"></p>-->
+<table id="result">
+    <tr>
+        <th id='status' colspan="2">Waiting for JQuery to boot...</th>
+    </tr>
+</table>
+<p>
+    Project at <a href="https://github.com/ngopaul/ploversearch" target="_blank">ngopaul/ploversearch</a>
+</p>
+<p>
+    Forked from <a href="https://github.com/FauxFaux/ploversearch" target="_blank">FauxFaux/ploversearch</a>
+</p>
+<script src="./jquery.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    if (!window.jQuery) {
+        document.write('<script src="jquery.min.js"><\/script>');
+    }
+</script>
+<script>
+    $(function () {
+        start();
+    });
+</script>
+</body>
+</html>
