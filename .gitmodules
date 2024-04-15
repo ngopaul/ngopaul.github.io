@@ -1,0 +1,3 @@
+[submodule "ploversearch"]
+	path = ploversearch
+	url = https://github.com/ngopaul/ploversearch
